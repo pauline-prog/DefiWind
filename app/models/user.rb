@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_one :like, dependent: :destroy
   has_one :favorite, dependent: :destroy
   has_one :position, dependent: :destroy
+  has_many_attached :photos
 end
