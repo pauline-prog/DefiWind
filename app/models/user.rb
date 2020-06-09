@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :race_number, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  has_one :like, dependent: :destroy
 end
