@@ -2,11 +2,9 @@
   justify-content: space-between;
   background: white;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
@@ -14,16 +12,36 @@
 // my navbars
 
 .navbar-top {
+  background-color: white;
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
 
 .navbar-bottom {
+  background-color: white;
   border-top-left-radius: 3rem;
   border-top-right-radius: 3rem;
-  background-color: white;
+  -webkit-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+  -moz-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+  box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+}
 
--webkit-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
--moz-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+.nav-items {
+  margin: -5px 0 -5px 0;
+}
+
+.nav-logo {
+  margin-top: 7px;
+}
+.nav-item-left-left {
+  margin: 0 -10px 0 0;
+}
+.nav-item-left {
+  margin: 0 -8px 0 0;
+}
+.nav-item-right {
+  margin: 0 0 0 -8px;
+}
+.nav-item-right-right {
+  margin: 0 0 0 -10px;
 }
