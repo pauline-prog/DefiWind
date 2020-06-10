@@ -10,3 +10,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+// my navbars
+
+.navbar-top {
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+}
+
+.navbar-bottom {
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  background-color: white;
+
+-webkit-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+-moz-box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+box-shadow: 0px -3px 5px 0px rgba(8,8,8,0.08);
+}
