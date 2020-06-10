@@ -1,0 +1,77 @@
+=> [[32m#<Post:0x00007fcb4946d9f0[0m
+  id: [1;34m4[0m,
+  title: [31m[1;31m"[0m[31mLasagne[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mThree egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m10[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m10[0m:[1;34m25[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f5a0[0m
+  id: [1;34m5[0m,
+  title: [31m[1;31m"[0m[31mTuna Sashimi[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mThick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f4d8[0m
+  id: [1;34m6[0m,
+  title: [31m[1;31m"[0m[31mPho[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mCreamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f410[0m
+  id: [1;34m7[0m,
+  title: [31m[1;31m"[0m[31mChicken Wings[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mGranny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f348[0m
+  id: [1;34m8[0m,
+  title: [31m[1;31m"[0m[31mBarbecue Ribs[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mSmoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f280[0m
+  id: [1;34m9[0m,
+  title: [31m[1;31m"[0m[31mKebab[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mThree egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f1b8[0m
+  id: [1;34m10[0m,
+  title: [31m[1;31m"[0m[31mFrench Fries with Sausages[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mFresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f0f0[0m
+  id: [1;34m11[0m,
+  title: [31m[1;31m"[0m[31mPeking Duck[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mCreamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948f028[0m
+  id: [1;34m12[0m,
+  title: [31m[1;31m"[0m[31mEbiten maki[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mCreamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948ef60[0m
+  id: [1;34m13[0m,
+  title: [31m[1;31m"[0m[31mPizza[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mBreaded fried chicken with waffles. Served with maple syrup.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Post:0x00007fcb4948ee98[0m
+  id: [1;34m14[0m,
+  title: [31m[1;31m"[0m[31mCheeseburger[1;31m"[0m[31m[0m,
+  description:
+   [31m[1;31m"[0m[31mThree egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mWed[0m, [1;34m10[0m [1;34;4mJun[0m [1;34m2020[0m [1;34m10[0m:[1;34m11[0m:[1;34m30[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]

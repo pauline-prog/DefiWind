@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Creating posts ..."
+
+  post = Post.new(
+    title: Faker::Food.dish,
+    description: Faker::Food.description,
+  	)
+  file = URI.open(Faker::Avatar.image)
+  post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
+  post.save!
+
+puts "Posts created"
