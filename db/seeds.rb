@@ -20,3 +20,12 @@ puts "Creating posts ..."
   post.save!
 
 puts "Posts created"
+
+  User.create!(
+  	email: 'paulinep@admin.com',
+  	first_name: 'pauline',
+  	last_name: 'poize',
+  	admin: true,
+  	race_number: 1,
+  	password: '123456'
+  )
