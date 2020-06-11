@@ -1,17 +1,17 @@
-<!-- Code Margaux -->
+<!-- Code Margaux 2 -->
 
 <div id="post-<%= post.id %>" class="container post">
 
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-8 p-0">
+  <div class="row">
+    <div class="col-12 col-lg-8 post-image">
       <% if post.photo != nil %>
         <%= cl_image_tag post.photo.key, width:'100%' %>
       <% end %>
     </div>
   </div>
 
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-8 mt-3 pl-3">
+  <div class="row">
+    <div class="col-12 col-lg-8 post-like">
       <%= link_to new_like_path(post.id), method: :post, remote: true do %>
         <i><img src="assets/like.png" width="35"></i>
       <% end %>
@@ -20,8 +20,8 @@
 
   <hr>
 
-  <div class="row justify-content-center post-text pt-0">
-    <div class="col-12 col-lg-4 text-justify">
+  <div class="row">
+    <div class="col-12 col-lg-4 post-text">
       <p><img src="assets/likeblack.png" width="20">  238 Likes</p>
       <div class="post-title-desc">
         <p><strong><%= post.title %></strong></p>
