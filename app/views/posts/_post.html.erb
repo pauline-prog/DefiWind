@@ -13,11 +13,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-8 mt-3 pl-3">
       <%= link_to new_like_path(post.id), method: :post, remote: true do %>
-        <% if user.posts.include?(post) %>
-          <i><img src="assets/like.png" width="35"></i>
-        <% else %>
-          <i><img src="assets/likered.png" width="35"></i>
-        <% end %>
+        <i><img src="assets/like.png" width="35"></i>
       <% end %>
     </div>
   </div>
@@ -38,33 +34,3 @@
   </div>
 
 </div>
-
-
-<!-- Code Pauline et Samir -->
-
-<!-- <div id="post-<%= post.id %>" class="container post py-6">
-
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-12">
-
-      <% if post.photo != nil %>
-        <%= link_to new_like_path(post.id), method: :post, remote: true do %>
-          <% if user.posts.include?(post) %>
-            <i class="fas fa-heart"></i>
-          <% else %>
-            <i class="far fa-heart"></i>
-          <% end %>
-        <% end %>
-        <%= cl_image_tag post.photo.key, width:'100%' %>
-      <% end %>
-
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-12 text-justify">
-      <p><%= post.title %></p>
-      <p><%= post.description %></p>
-    </div>
-  </div>
-</div> -->
