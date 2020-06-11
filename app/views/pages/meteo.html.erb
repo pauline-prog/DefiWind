@@ -1,13 +1,21 @@
-<script id="wg_fwdg_242_3_1591695677207" class="windguru">
-(function (window, document) {
-  var loader = function () {
-    var arg = ["s=242","m=3","uid=wg_fwdg_242_3_1591695677207","wj=knots","tj=c","odh=0","doh=24","fhours=240","vt=forecasts","lng=fr",
-   "p=WINDSPD,GUST,MWINDSPD,SMER,TMPE,CDC,APCP1s,RATING"];
-    var script = document.createElement("script");
-    var tag = document.getElementsByTagName("script")[0];
-    script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
-    tag.parentNode.insertBefore(script, tag);
-  };
-  window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-})(window, document);
-</script>
+<%= render 'components/navbar-top-back' %>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="windguru">
+  <script id="wg_fwdg_242_3_1591695677207">
+  (function (window, document) {
+    var loader = function () {
+      var arg = ["s=242","m=3","uid=wg_fwdg_242_3_1591695677207","wj=knots","tj=c","odh=0","doh=24","fhours=240","vt=forecasts","lng=fr",
+     "p=WINDSPD,GUST,MWINDSPD,SMER,TMPE,CDC,APCP1s,RATING"];
+      var script = document.createElement("script");
+      var tag = document.getElementsByTagName("script")[0];
+      script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
+      tag.parentNode.insertBefore(script, tag);
+    };
+    window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+  })(window, document);
+  </script>
+</div>
+
+<%= render 'components/navbar-bottom-meteo' %>
