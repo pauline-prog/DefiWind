@@ -7,14 +7,13 @@ class PagesController < ApplicationController
   end
 
   def like
-    raise
     @post = Post.find(params[:post_id])
     if current_user.posts.include?(@post)
       Like.where(user: current_user, post: @post).first.destroy
     else
       Like.create(user: current_user, post: @post)
     end
-    redirect_to root_path
+    redirect_to root_path(anchor: "post-#{@post.id}")
   end
 
   # private

@@ -9,7 +9,7 @@
       <br><br><br><br>
 
       <% @posts.each do |post| %>
-       <% render 'posts/post', post: post %>
+       <%= render 'posts/post', post: post, user: current_user %>
       <% end %>
 <br>
 

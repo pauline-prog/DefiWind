@@ -35,27 +35,27 @@ document.addEventListener('turbolinks:load', () => {
 
 
 
-const posts = document.querySelectorAll('.post');
-posts.forEach(post => (
-  post.addEventListener("click", (event) => {
-    const id = event.currentTarget.dataset.id;
-    console.log(id)
-    const data = {state: "like", id: id}
-     $.ajax({
-      url: "/likes",
-      type: "POST",
-      data: data,
-      headers: {
-        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-      },
-      dataType: 'json',
-      //data: {foo: 'bar', cat: $(this).data('cat'), id: $(this).data('id')} ,
-      success: function(data) {
-        console.log(data)
-      },
-      error: function(data) {}
-    })
-  })
-))
+// const posts = document.querySelectorAll('.post');
+// posts.forEach(post => (
+//   post.addEventListener("click", (event) => {
+//     const id = event.currentTarget.dataset.id;
+//     console.log(id)
+//     const data = {state: "like", id: id}
+//      $.ajax({
+//       url: "/likes",
+//       type: "POST",
+//       data: data,
+//       headers: {
+//         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+//       },
+//       dataType: 'json',
+//       //data: {foo: 'bar', cat: $(this).data('cat'), id: $(this).data('id')} ,
+//       success: function(data) {
+//         console.log(data)
+//       },
+//       error: function(data) {}
+//     })
+//   })
+// ))
 
 
