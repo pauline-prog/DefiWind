@@ -6,13 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Post.destroy_all
+
 puts "Creating posts ..."
 
   post = Post.new(
     title: Faker::Food.dish,
     description: Faker::Food.description,
   	)
-  file = URI.open(Faker::Avatar.image)
+  file = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
   post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
   post.save!
 
