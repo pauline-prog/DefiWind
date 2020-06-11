@@ -2,40 +2,10 @@
 
   <br><br><br><br>
 
-  <% @posts.each do |post| %>
-    <div class="container post">
-
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8 p-0">
-          <% if post.photo != nil %>
-            <%= cl_image_tag post.photo.key, width:'100%' %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8 mt-3 pl-3">
-          <img src="assets/like.png" width="35">
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="row justify-content-center post-text pt-0">
-        <div class="col-12 col-lg-4 text-justify">
-          <p><img src="assets/likeblack.png" width="15">  238 Likes</p>
-          <div class="post-title-desc">
-            <p class="font-weight-bold"><%= post.title %></p>
-            <p><%= post.description %></p>
-          </div>
-          <div class="pt-4 pb-4">
-            <p class="font-weight-light">IL Y A 1 JOUR</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  <% end %>
+      <% @posts.each do |post| %>
+       <%= render 'posts/post', post: post, user: current_user %>
+      <% end %>
+<br>
 
   <% @posts.each do |post| %>
     <div class="container post">
