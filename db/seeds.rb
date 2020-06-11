@@ -9,7 +9,7 @@
 
 Post.destroy_all
 
-puts "Creating posts ..."
+puts "Creating post ..."
 
   post = Post.new(
     title: Faker::Food.dish,
@@ -19,4 +19,37 @@ puts "Creating posts ..."
   post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
   post.save!
 
-puts "Posts created"
+puts "Post created"
+
+Event.destroy_all
+
+puts "Creating events ..."
+  
+  event = Event.new(
+    title: "Event1",
+    description: "Description de l'event 1",
+  	)
+  event.date = Time.new(2020, 11, 8, 11, 35)
+  file2 = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
+  event.photo.attach(io:file2, filename:'avatar.png', content_type: 'img/png')
+  event.save!
+
+  event2 = Event.new(
+    title: "Event2",
+    description: "Description de l'event 2",
+    )
+  event2.date = Time.new(2020, 11, 8, 14, 45)
+  file3 = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
+  event2.photo.attach(io:file3, filename:'avatar.png', content_type: 'img/png')
+  event2.save!
+
+  event3 = Event.new(
+    title: "Event3",
+    description: "Description de l'event 3",
+    )
+  event3.date = Time.new(2020, 11, 9, 10, 00)
+  file4 = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
+  event3.photo.attach(io:file4, filename:'avatar.png', content_type: 'img/png')
+  event3.save!
+
+puts "Events created"
