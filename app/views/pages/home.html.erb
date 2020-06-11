@@ -1,5 +1,6 @@
 <%= render 'components/navbartop' %>
 <%= render 'components/navbarbottom' %>
+<%= csrf_meta_tag %>
 
 <div class="homepage">
   <div class="row justify-content-center">
@@ -8,21 +9,7 @@
       <br><br><br><br>
 
       <% @posts.each do |post| %>
-      <div class="container post py-6">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-12">
-            <% if post.photo != nil %>
-              <%= cl_image_tag post.photo.key %>
-            <% end %>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-12 text-justify">
-              <p><%= post.title %></p>
-              <p><%= post.description %></p>
-          </div>
-        </div>
-      </div>
+       <%= render 'posts/post', post: post, user: current_user %>
       <% end %>
 <br>
 
