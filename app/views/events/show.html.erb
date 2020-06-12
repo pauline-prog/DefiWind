@@ -1,6 +1,20 @@
-<% if @event.photo.attached? %>
-  <%= cl_image_tag @event.photo.key %>
-<% end %>
-<%= @event.title %>
-<%= @event.description %>
-<%= @event.date %>
+
+<body>
+  <div class="container2">
+    <%= render 'components/navbar-top' %>
+    <div class="photo_show">
+    <% if @event.photo.attached? %>
+      <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/briefing2_aokmnw.jpg" width="450">
+    <% end %>
+    </div>
+    <div class="Productshow_container">
+      <h1><%= @event.title %></h1>
+      <p><%= @event.date %></p>
+      <br>
+      <p><%= @event.description %></p>
+    </div>
+    <%= render 'components/navbar-bottom-home' %>
+  </div>
+</body>
