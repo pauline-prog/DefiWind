@@ -4,7 +4,7 @@
     <% if current_user.events.include?(event) %>
       <i class="fas fa-heart"></i>
     <% else %>
-      <i class="far fa-heart"></i>    
+      <i class="far fa-heart"></i>
     <% end %>
   <% end %>
   <%= link_to event_path(event.id) do %>

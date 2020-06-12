@@ -54,16 +54,29 @@ puts "Post created"
 
 # puts "Events created"
 
-puts "Creating position ..."
+# puts "Creating position ..."
 
-Position.destroy_all
+# Position.destroy_all
 
-Position.create!(
-  time: Time.new(03,20,56),
-  point: 24,
-  place: 34,
-  event: Event.find(25),
-  user: User.find(2)
-  )
+# Position.create!(
+#   time: Time.new(03,20),
+#   point: 24,
+#   place: 34,
+#   event: Event.find(25),
+#   user: User.find(2)
+#   )
 
-puts "Position created"
+# puts "Position created"
+
+puts "Creating admin user"
+
+  User.create!(
+    email: "admin@admin.fr",
+    first_name: "pauline",
+    last_name: "poize",
+    race_number: 108,
+    password: "password",
+    admin: true
+    )
+
+puts "Admin user created"
