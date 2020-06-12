@@ -11,17 +11,23 @@ class EventsController < ApplicationController
   end
 
   def index_day
-    raise
-    # @events = Event.where("DATETIME(date) BETWEEN '09:00:01' AND '18:00:00'")
-    # @events = @current_events.date.select_hour(start_hour: 8, end_hour: 18)
-    @current_events.reject do |current_event|
-       current_event.date.hours
+    @events = []
+    @current_events.each do |current_event|
+       if current_event.date.hour < 18 && current_event.date.hour > 8
+         @events.push(current_event)
+       end
     end
+    return @events
   end
 
   def index_night
-    @events = @current_events.where("TIME(date) BETWEEN '18:00:01' AND '9:00:00'")
-    # @events = @current_events.date.select_hour(start_hour: 18, end_hour: 8)
+    @events = []
+    @current_events.each do |current_event|
+       if current_event.date.hour > 18 || current_event.date.hour < 8
+         @events.push(current_event)
+       end
+    end
+    return @events
   end
 
   def show
