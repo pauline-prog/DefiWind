@@ -1,0 +1,22 @@
+// meteo
+
+.meteo {
+  margin-top: 70px;
+}
+
+.webcam {
+  margin-left: -5px;
+}
+
+@media (min-width: 1200px) {
+  .meteo-jour {
+    display: inline-block;
+  }
+  .meteo-lieu {
+    display: inline-block;
+  }
+  .meteo {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  }
+}

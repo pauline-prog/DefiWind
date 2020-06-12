@@ -1,21 +1,4 @@
 <%= link_to "Mes Favoris", favorited_events_path %>
-<% @events.each do |event| %>
-  <div id="event-<%= event.id %>">
-  <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
-    <% if current_user.events.include?(event) %>
-      <i class="fas fa-heart"></i>
-    <% else %>
-      <i class="far fa-heart"></i>    
-    <% end %>
-  <% end %>
-  <%= link_to event_path(event.id) do %>
-    <% if event.photo.attached? %>
-      <%= cl_image_tag event.photo.key %>
-    <% end %>
-    <%= event.title %>
-    <%= event.description %>
-    <%= event.date %>
-    <%= event.title %>
-  <% end %>
-  </div>
-<% end %>
+<%= link_to "Jour", day_events_path %>
+<%= link_to "Nuit", night_events_path %>
+<%= render 'shared_index', events: @events %>

@@ -1,22 +1,36 @@
-     <div id="post-<%= post.id %>" class="container post py-6">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-12">
-            <%= link_to new_like_path(post.id), method: :post, remote: true do %>
-              <% if user.posts.include?(post) %>
-                <i class="fas fa-heart"></i>
-              <% else %>
-                <i class="far fa-heart"></i>
-              <% end %>
-            <% end %>
-            <% if post.photo.attached? %>
-              <%= cl_image_tag post.photo.key %>
-            <% end %>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-12 text-justify">
-              <p><%= post.title %></p>
-              <p><%= post.description %></p>
-          </div>
-        </div>
+<!-- Code Margaux 2 -->
+
+<div id="post-<%= post.id %>" class="container post">
+
+  <div class="row">
+    <div class="col-12 col-lg-8 post-image">
+      <% if post.photo != nil %>
+        <%= cl_image_tag post.photo.key, width:'100%' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-8 post-like">
+      <%= link_to new_like_path(post.id), method: :post, remote: true do %>
+        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953091/like_iuqp0i.png" width="35"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-12 col-lg-4 post-text">
+      <p><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likeblack_ltcvcq.png" width="15">  238 Likes</p>
+      <div class="post-title-desc">
+        <p><strong><%= post.title %></strong></p>
+        <p><%= post.description %></p>
       </div>
+      <div class="pt-4 pb-4">
+        <p>IL Y A 1 JOUR</p>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,41 +1,46 @@
 // Specific CSS for your home-page
 
 .homepage {
-  background-color: $my-blue;
+  background-color: red;
 }
 
-.post {
-  background-color: blue;
+.post-title-desc p {
+  margin-bottom: 0;
 }
 
-
-// windguru
-.windguru {
-  width: 100%;
+@media (max-width: 1200px) {
+  .post-image {
+    padding: 0;
+  }
+  .post-like {
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+  .post-text {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 0px;
+  }
 }
 
-// blob
-svg {
-    width: 100%;
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .post {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .post-image {
+    margin-left: 10px;
+  }
+  .post-like {
+    margin-left: -240px;
+  }
+  .post-text {
+    margin-top: 15px;
+  }
 }
-.filled-heading {
-    font-family: 'Comfortaa', cursive;
-    font-size: 5em;
-    line-height: 0.9;
-}
-
-/* Animate the background shapes */
-#background path {
-    animation: pulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
-
-    /* Necessary to keep the SVG objects in place while scaling */
-    transform-origin: 50% 50%;
-    transform-box: fill-box;
-}
-
-@keyframes pulse {
-    /* Rotating it along with the scale makes it a little bit more fancy */
-    0%, 100% { transform: scale(0) rotate(33deg); }
-    35%, 65% { transform: scale(1) rotate(0deg); }
-}
-

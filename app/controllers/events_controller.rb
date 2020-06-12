@@ -1,21 +1,33 @@
 class EventsController < ApplicationController
-  # before_action :current_events, only[:index, :index_favorited, :index_day, :index_night]
+  before_action :current_events, only: [:index, :index_day, :index_night]
   
   def index
-    @events = Event.all
+    @events = @current_events
   end
 
   def index_favorited
-    # @events = @events.current_user.events
     @events = current_user.events
+    @events = @events.where("date > ?", Time.now)
   end
 
   def index_day
-    @events = @events.select_hour(:date, start_hour: 9, end_hour: 18)
+    @events = []
+    @current_events.each do |current_event|
+       if current_event.date.hour < 18 && current_event.date.hour > 8
+         @events.push(current_event)
+       end
+    end
+    return @events
   end
 
   def index_night
-    @events = @events.select_hour(:date, start_hour: 18, end_hour: 9)
+    @events = []
+    @current_events.each do |current_event|
+       if current_event.date.hour > 18 || current_event.date.hour < 8
+         @events.push(current_event)
+       end
+    end
+    return @events
   end
 
   def show
@@ -35,6 +47,6 @@ class EventsController < ApplicationController
   private
 
   def current_events
-    @events = Event.where("date > ?", Time.now)
+    @current_events = Event.where("date > ?", Time.now)
   end
 end

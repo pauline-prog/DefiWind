@@ -1,44 +1,43 @@
-.card_log {
+.card_sign {
   padding-top: 150px;
-  margin-right: 150px;
   // padding-bottom: 50px;
 }
 
-.m-center1 {
+.m-center {
   margin: auto;
-  width: 300px;
+  width: 270px;
   height: 400px;
 }
 
-.bg-log {
-  background: url(https://res.cloudinary.com/dpwr92z8p/image/upload/v1591793000/windsurfing-585720_1920_lqriks.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 98vh;
-}
-
-h2 {
-  margin-left: 7%;
+h3 {
+  margin-left: 27%;
   margin-bottom: 13%;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
-.btn-treehouse {
+.bg-sign {
+  background: url(https://res.cloudinary.com/dpwr92z8p/image/upload/v1591793000/windsurfing-585720_1920_lqriks.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 98vh;
+}
+
+.btn {
   color: white;
-  padding: 8px 65px;
+  padding: 8px 90px;
   border-radius: 10px;
   font-weight: 600;
   background: $my-blue;
 }
 
-.btn-treehouse:hover {
+.btn:hover {
   opacity: 2;
   background: #0E3D93;
   text-decoration: none;
   color: white;
 }
 
-.inputForm {
+.inputFor {
   border-radius: 10px;
   margin-bottom: 3%;
   background: white;
@@ -48,4 +47,3 @@ h2 {
   margin-left: 15%;
   margin-top: 3%;
 }
-

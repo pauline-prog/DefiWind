@@ -1,13 +1,34 @@
-<script id="wg_fwdg_242_3_1591695677207" class="windguru">
-(function (window, document) {
-  var loader = function () {
-    var arg = ["s=242","m=3","uid=wg_fwdg_242_3_1591695677207","wj=knots","tj=c","odh=0","doh=24","fhours=240","vt=forecasts","lng=fr",
-   "p=WINDSPD,GUST,MWINDSPD,SMER,TMPE,CDC,APCP1s,RATING"];
-    var script = document.createElement("script");
-    var tag = document.getElementsByTagName("script")[0];
-    script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
-    tag.parentNode.insertBefore(script, tag);
-  };
-  window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-})(window, document);
-</script>
+<%= render 'components/navbar-top-back' %>
+
+<div class="meteo">
+  <a class="weatherwidget-io" href="https://forecast7.com/fr/43d103d11/gruissan-plage/" data-label_1="GRUISSAN" data-label_2="CHALETS" data-font="Verdana" data-icons="Climacons Animated" data-days="5" data-textcolor="#292929" data-highcolor="#292929" data-lowcolor="#292929" data-suncolor="#F8C346" data-mooncolor="#F8C346" data-cloudcolor="#c9c9c9" data-cloudfill="#eeeeee" data-raincolor="#154bb8" data-snowcolor="#dedede" >GRUISSAN CHALETS</a>
+  <script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  </script>
+</div>
+
+<div class="webcam">
+  <center>
+    <IFRAME src="https://www.winds-up.com/api.php?id=23&set_width=100%&set_height=400&set_obs=&set_obs_array=&set_previs=&set_webcam=1&set_map=&set_logo=&set_txt=&set_unite=1&output=embed&set_codeLive=1"
+      width="100%" height="250" scrolling=no frameborder=0 class="pl-0">
+    </IFRAME>
+  </center>
+</div>
+
+<div class="windguru">
+  <script id="wg_fwdg_242_3_1591961034434">
+  (function (window, document) {
+    var loader = function () {
+      var arg = ["s=242","m=3","uid=wg_fwdg_242_3_1591961034434","wj=knots","tj=c","odh=0","doh=24","fhours=240","vt=forecasts","lng=fr",
+     "p=WINDSPD,GUST,MWINDSPD,SMER,TMPE,RATING"];
+      var script = document.createElement("script");
+      var tag = document.getElementsByTagName("script")[0];
+      script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
+      tag.parentNode.insertBefore(script, tag);
+    };
+    window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+  })(window, document);
+  </script>
+</div>
+
+<%= render 'components/navbar-bottom-meteo' %>
