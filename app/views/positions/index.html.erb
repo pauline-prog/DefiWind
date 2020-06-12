@@ -1,0 +1,5 @@
+<% @positions.each do |position| %>
+  <p>Temps: <%= position.time.hour %>h<%= position.time.min %>min</p>
+  <p>Position dans le classement: <%= position.place %></p>
+  <p>Nombre de points: <%= position.point %></p>
+<% end %>

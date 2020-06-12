@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'night_events', to: 'events#index_night', as: :night_events
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :events, only: [:index, :show]
+  resources :positions, only: :index
 end
