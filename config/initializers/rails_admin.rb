@@ -10,6 +10,30 @@ RailsAdmin.config do |config|
     end
   end
   config.included_models = [ "User", "Event", "Post", "Position" ]
+  config.model 'User' do
+    import do
+      mapping_key :email
+      field :first_name
+      field :last_name
+      field :email
+      field :race_number
+      field :password
+    end
+  end
+  config.model 'Position' do
+    import do
+      field :user_id
+      field :event_id
+      field :point
+      field :place
+      field :time
+    end
+  end
+  config.model 'Event' do
+    import do
+      mapping_key :title
+    end
+  end
   config.actions do
     all
     import
