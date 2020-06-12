@@ -1,15 +1,11 @@
 // meteo
 
 .meteo {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 .webcam {
   margin-left: -5px;
-}
-
-.windguru {
-  margin-top: 20px;
 }
 
 @media (min-width: 1200px) {
@@ -18,5 +14,9 @@
   }
   .meteo-lieu {
     display: inline-block;
+  }
+  .meteo {
+  margin-top: 100px;
+  margin-bottom: 30px;
   }
 }
