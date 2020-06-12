@@ -1,3 +1,22 @@
-// windguru
+// meteo
+
+.meteo {
+  margin-top: 100px;
+}
+
+.webcam {
+  margin-left: -5px;
+}
+
 .windguru {
+  margin-top: 20px;
+}
+
+@media (min-width: 1200px) {
+  .meteo-jour {
+    display: inline-block;
+  }
+  .meteo-lieu {
+    display: inline-block;
+  }
 }

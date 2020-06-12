@@ -1,20 +1,35 @@
 <%= render 'components/navbar-top-back' %>
 
-<br><br><br><br><br><br><br><br>
+<div class="meteo">
+  <center>
+    <div class="meteo-jour">
+      <p>METEO DU JOUR     </p>
+    </div>
+    <div class="meteo-lieu">
+      <p><img src="assets/sun.png" width="30">      24°C À GRUISSAN, CHALETS</p>
+    </div>
+  </center>
+</div>
+
+<div class="webcam">
+  <center><IFRAME src="https://www.winds-up.com/api.php?id=23&set_width=100%&set_height=400&set_obs=&set_obs_array=&set_previs=&set_webcam=1&set_map=&set_logo=&set_txt=&set_unite=1&output=embed&set_codeLive=1"
+    width="100%" height="250" scrolling=no frameborder=0 class="pl-0">
+  </IFRAME></center>
+</div>
 
 <div class="windguru">
   <script id="wg_fwdg_242_3_1591695677207">
-  (function (window, document) {
-    var loader = function () {
-      var arg = ["s=242","m=3","uid=wg_fwdg_242_3_1591695677207","wj=knots","tj=c","odh=0","doh=24","fhours=240","vt=forecasts","lng=fr",
-     "p=WINDSPD,GUST,MWINDSPD,SMER,TMPE,CDC,APCP1s,RATING"];
-      var script = document.createElement("script");
-      var tag = document.getElementsByTagName("script")[0];
-      script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
-      tag.parentNode.insertBefore(script, tag);
-    };
-    window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-  })(window, document);
+    (function (window, document) {
+      var loader = function () {
+        var arg = ["s=242","m=3","uid=wg_fwdg_242_3_1591695677207","wj=knots","tj=c","odh=0","doh=24","fhours=240","vt=forecasts","lng=fr",
+       "p=WINDSPD,GUST,MWINDSPD,SMER,TMPE,CDC,APCP1s,RATING"];
+        var script = document.createElement("script");
+        var tag = document.getElementsByTagName("script")[0];
+        script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
+        tag.parentNode.insertBefore(script, tag);
+      };
+      window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
   </script>
 </div>
 
