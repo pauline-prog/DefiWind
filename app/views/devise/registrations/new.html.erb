@@ -1,7 +1,7 @@
 <div class="bg-sign">
   <%= render 'components/navbar-top' %>
-  <div class="row card_log m-center">
-    <h3>Sign up</h3>
+  <div class="row card_sign m-center">
+    <h3>S'inscrire</h3>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -10,18 +10,18 @@
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email", class: 'inputForm' }%>
+                    input_html: { autocomplete: "email", class: 'inputFor' }%>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password", class: 'inputForm' } %>
+                    input_html: { autocomplete: "new-password", class: 'inputFor' } %>
         <%= f.input :password_confirmation,
                     required: true,
-                    input_html: { autocomplete: "new-password", class: 'inputForm' } %>
+                    input_html: { autocomplete: "new-password", class: 'inputFor' } %>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn mb-3" %>
+        <%= f.button :submit, "S'INSCRIRE", class: "btn mb-3" %>
       </div>
     <% end %>
       <div class="link">
