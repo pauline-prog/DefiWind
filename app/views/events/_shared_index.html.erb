@@ -11,9 +11,9 @@
     <% if event.photo.attached? %>
       <%= cl_image_tag event.photo.key %>
     <% end %>
-    <%= event.title %>
-    <%= event.description %>
-    <%= event.date %>
+    <p><strong><%= event.title %></strong></p>
+    <p><%= event.description %></p>
+    <p><%= event.date.day %>/<%= event.date.month %>/<%= event.date.year %> <%= event.date.hour %>h <%= event.date.hour %>min</p>
   <% end %>
   </div>
 <% end %>

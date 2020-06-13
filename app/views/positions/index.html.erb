@@ -1,5 +1,9 @@
+<%= render 'components/navbar-top-back' %>
 <% @positions.each do |position| %>
+  <p>Nom: <%= position.user.last_name %></p>
+  <p>Préom: <%= position.user.first_name %></p>
   <p>Temps: <%= position.time.hour %>h<%= position.time.min %>min</p>
   <p>Position dans le classement: <%= position.place %></p>
   <p>Nombre de points: <%= position.point %></p>
 <% end %>
+<%= render 'components/navbar-bottom-ranking' %>

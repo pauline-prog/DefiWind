@@ -4,32 +4,66 @@
 
   <div class="row">
     <div class="col-12 col-lg-8 post-image">
-      <% if post.photo != nil %>
+      <% if post.photo.attached? %>
         <%= cl_image_tag post.photo.key, width:'100%' %>
       <% end %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12 col-lg-8 post-like">
-      <%= link_to new_like_path(post.id), method: :post, remote: true do %>
-        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953091/like_iuqp0i.png" width="35"></i>
-      <% end %>
-    </div>
-  </div>
+
 
   <hr>
 
   <div class="row">
     <div class="col-12 col-lg-4 post-text">
-      <p><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likeblack_ltcvcq.png" width="15">  238 Likes</p>
-      <div class="post-title-desc">
-        <p><strong><%= post.title %></strong></p>
-        <p><%= post.description %></p>
-      </div>
-      <div class="pt-4 pb-4">
-        <p>IL Y A 1 JOUR</p>
-      </div>
+      <%= link_to new_like_path(post.id), method: :post, remote: true do %>
+        <% if user %>
+          <p><% if user.posts.include?(post) %>
+            <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likeblack_ltcvcq.png" width="15">
+          <% else %>
+            <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953091/like_iuqp0i.png" width="15"></i>
+          <% end %>
+        <% end %>
+      <% end %>    
+      <% if post.likes %>
+        <% post_likes = Like.where("post_id = ?", post.id) %>
+        <% if post_likes.size == 1 %>
+          <%= post_likes.size %> Like</p>
+        <% else %>
+          <p><%= post_likes.size %> Likes</p>
+        <% end %>
+        <div class="post-title-desc">
+          <p><strong><%= post.title %></strong></p>
+          <p><%= post.description %></p>
+        </div>
+        <div class="pt-4 pb-4">
+          <% if post_likes.empty? == false %>
+            <% post_creation = post.created_at %>
+            <% difference_day = Time.now.day - post_creation.day %>
+            <% difference_hour = Time.now.hour - post_creation.hour %>
+            <% difference_min = Time.now.min - post_creation.min %>
+            <% if difference_day >= 1 %>
+              <% if difference_day == 1 %>
+                <p>IL Y A <%= difference_day %> JOUR</p>
+              <% else %>
+                <p>IL Y A <%= difference_day %> JOURS</p>
+              <% end %>
+            <% elsif difference_hour >= 1 %>
+              <% if difference_hour == 1 %>
+                <p>IL Y A <%= difference_hour %> HEURE</p>
+              <% else %>
+                <p>IL Y A <%= difference_hour %> HEURES</p>
+              <% end %>
+            <% elsif difference_min >= 1 %>
+              <% if difference_min == 1 %>
+                <p>IL Y A <%= difference_min %> MINUTE</p>
+              <% else %>
+                <p>IL Y A <%= difference_min %> MINUTES</p>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 
