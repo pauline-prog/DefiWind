@@ -6,10 +6,6 @@
   <%= render 'posts/post', post: post, user: current_user %>
 <% end %>
 
-<% @posts.each do |post| %>
-  <%= render 'posts/post', post: post, user: current_user %>
-<% end %>
-
 <br><br><br>
 
 <%= render 'components/navbar-bottom-home' %>
