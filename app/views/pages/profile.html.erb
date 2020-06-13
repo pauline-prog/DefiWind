@@ -1,0 +1,12 @@
+<% if current_user.username %>
+  <p><%= current_user.username %></p>
+<% else %>
+  <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+<% end %>
+<% if current_user.location %>
+  <p><%= current_user.location %></p>
+<% end %>
+<p>#<%= current_user.race_number %></p>
+<%= link_to edit_user_registration_path do %>
+  <i class="far fa-edit"></i>
+<% end %>

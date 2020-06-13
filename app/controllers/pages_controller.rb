@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def meteo
   end
 
+  def profile
+  end
+
   def like
     @post = Post.find(params[:post_id])
     if current_user.posts.include?(@post)
