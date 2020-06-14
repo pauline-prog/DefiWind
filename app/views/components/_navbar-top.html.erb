@@ -12,7 +12,8 @@
             <%= link_to rails_admin_path do %>
               <i class="fas fa-users-cog"></i>
             <% end %>
-          <% elsif current_user.avatar.attached? %>
+          <% end %>
+          <% if current_user.avatar.attached? %>
             <%= link_to profile_path do %>
               <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
             <% end %>
