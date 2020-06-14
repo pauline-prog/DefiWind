@@ -1,0 +1,18 @@
+<% if current_user.avatar.attached? %>
+  <%= cl_image_tag current_user.avatar.key, width: 45, height: 45 %>
+<% end %>
+<% if current_user.photo.attached? %>
+  <%= cl_image_tag current_user.photo.key %>
+<% end %>
+<% if current_user.username %>
+  <p><%= current_user.username %></p>
+<% else %>
+  <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+<% end %>
+<% if current_user.location %>
+  <p><%= current_user.location %></p>
+<% end %>
+<p>#<%= current_user.race_number %></p>
+<%= link_to edit_user_path(current_user) do %>
+  <i class="far fa-edit"></i>
+<% end %>
