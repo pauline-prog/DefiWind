@@ -1,5 +1,5 @@
 <h2>Modifier mon profil</h2>
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user, url: user_path, method: :patch) do |f| %>
   <%= f.input :first_name, label: 'Prénom', placeholder: 'Oscar' %>
   <%= f.input :last_name, label: 'Nom de famille', placeholder: 'Dupont' %>
   <%= f.input :username, label: 'Surnom' %>
@@ -10,3 +10,4 @@
   <%= f.file_field :photo %>
   <%= f.submit 'Valider' %>
 <% end %>
+<%= link_to 'Changer de mot de passe', edit_user_registration_path %>

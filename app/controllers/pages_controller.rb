@@ -8,6 +8,11 @@ class PagesController < ApplicationController
   end
 
   def profile
+    if current_user
+      @user = current_user
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def like

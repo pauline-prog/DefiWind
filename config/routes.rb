@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, :skip => [:registrations]                                          
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
+    patch 'users' => 'devise/registrations#update', :as => 'user_registration'            
+  end
   root to: 'pages#home'
   post "posts/:post_id/likes", to: "pages#like", as: :new_like
 #   member do

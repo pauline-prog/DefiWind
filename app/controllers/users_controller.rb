@@ -1,21 +1,22 @@
 class UsersController < ApplicationController
   def edit
-  	@user = current_user
+  	@user = User.find(params[:id])
   end
 
   def update
-  	@user = current_user
-  	@user.update(user_params)
-  	if @user.save
+  	@user = User.find(params[:id])
+  	if @user.update(user_params)
+      @user.update(user_params)
   	  redirect_to profile_path
   	else
-  	  render :new
+      raise
+  	  render 'users/edit'
   	end
   end
 
   private
 
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :username, :location, :race_number, :email, :avatar, :photo)
+  	params.require(:user).permit(:first_name, :last_name, :username, :email, :race_number, :location, :avatar, :photo)
   end
 end
