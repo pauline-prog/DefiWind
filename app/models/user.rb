@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :positions, dependent: :destroy
-  has_many_attached :photos
+  has_one_attached :avatar
+  has_one_attached :photo
   has_many :posts, through: :likes
   has_many :events, through: :favorites
 end
