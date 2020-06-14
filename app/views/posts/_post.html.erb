@@ -6,6 +6,8 @@
     <div class="col-12 col-lg-8 post-image">
       <% if post.photo.attached? %>
         <%= cl_image_tag post.photo.key, width:'100%' %>
+      <% elsif post.video.attached? %>
+        <%= cl_video_tag post.video.key %>
       <% end %>
     </div>
   </div>

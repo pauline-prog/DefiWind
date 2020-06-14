@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
+    @user.email = current_user.email
+    @user.race_number = current_user.email
   	if @user.update(user_params)
       @user.update(user_params)
   	  redirect_to profile_path
