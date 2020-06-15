@@ -1,0 +1,49 @@
+.card_profile {
+  padding-top: 90px;
+}
+
+.m-center2 {
+  margin: auto;
+  width: 310px;
+  height: 400px;
+}
+
+h4 {
+  margin-left: 15%;
+  margin-bottom: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.bg-profile {
+  background: url(https://res.cloudinary.com/dpwr92z8p/image/upload/v1592225774/ocean-water-on-beach-sand_fmcd7t.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 98vh;
+}
+
+.btn-profile {
+  color: white;
+  padding: 8px 120px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: $my-blue;
+}
+
+.btn-profile:hover {
+  opacity: 2;
+  background: #0E3D93;
+  text-decoration: none;
+  color: white;
+}
+
+.inputfor {
+  border-radius: 10px;
+  margin-bottom: 1%;
+  background: white;
+}
+
+.link {
+  margin-left: 15%;
+  margin-top: 3%;
+}
+
