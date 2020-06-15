@@ -11,7 +11,6 @@ class UsersController < ApplicationController
       @user.update(user_params)
   	  redirect_to profile_path
   	else
-      raise
   	  render 'users/edit'
   	end
   end
