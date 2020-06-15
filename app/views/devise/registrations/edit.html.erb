@@ -1,42 +1,48 @@
-<h2>Changer de mot de passe</h2>
+<div class="bg-sign">
+  <%= render 'components/navbar-top' %>
+  <h5>Changer de mot de passe</h5>
+  <div class="row card_sign m-center">
+    <%= simple_form_for(resource, as: resource_name, url: user_registration_path(), html: { method: :patch }) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: user_registration_path(), html: { method: :patch }) do |f| %>
-  <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, placeholder: "oscar.dupont@gmail.com", required: true, autofocus: true, input_html: { class: "current-password", class: 'inputFor' } %>
 
-  <div class="form-inputs">
-    <%= f.input :email, placeholder: "oscar.dupont@gmail.com", required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <%= f.input :current_password,
+                    placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
+                    label: 'Mot de passe actuel',
+                    hint: "Nous avons besoin de votre mot de passe actuel pour confirmer les modifications.",
+                    required: true,
+                    input_html: { autocomplete: "current-password", class: 'inputFor' } %>
+        <%= f.input :password,
+                    placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
+                    label: "Nouveau mot de passe",
+                    hint: "6 caractères minimum - Laisser vide si vous ne souhaitez pas changer de mot de passe",
+                    required: false,
+                    input_html: { autocomplete: "new-password", class: 'inputFor' } %>
+        <%= f.input :password_confirmation,
+                    placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
+                    label: "Confirmation mot de passe",
+                    required: false,
+                    input_html: { autocomplete: "new-password", class: 'inputFor' } %>
+
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Enregistrer" %>
+      </div>
     <% end %>
-
-    <%= f.input :current_password,
-                placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
-                label: 'Mot de passe actuel',
-                hint: "Nous avons besoin de votre mot de passe actuel pour confirmer les modifications.",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :password,
-                placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
-                label: "Nouveau mot de passe",
-                hint: "6 caractères minimum - Laisser vide si vous ne souhaitez pas changer de mot de passe",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
-                label: "Confirmation du nouveau mot de passe",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Enregistrer" %>
+  <div class="delete">
+    <h6>Supprimer mon compte</h6>
+    <div class="row card_delete m-center3">
+      <p>Vous souhaitez partir ? <br>
+      <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr(e) ?" }, method: :delete %></p>
+      <%= link_to "Retour", :back, class: "btn-retour mt-2" %>
   </div>
-<% end %>
-
-<h3>Supprimer mon compte</h3>
-
-<p>Vous souhaitez partir ? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr(e) ?" }, method: :delete %></p>
-
-<%= link_to "Retour", :back %>
+  <%= render 'components/navbar-bottom-profile' %>
+</div>
