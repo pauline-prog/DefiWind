@@ -1,9 +1,25 @@
 <%= render 'components/navbar-top-back' %>
-<% @positions.each do |position| %>
-  <p>Nom: <%= position.user.last_name %></p>
-  <p>Préom: <%= position.user.first_name %></p>
-  <p>Temps: <%= position.time.hour %>h<%= position.time.min %>min</p>
-  <p>Position dans le classement: <%= position.place %></p>
-  <p>Nombre de points: <%= position.point %></p>
-<% end %>
+
+<br><br><br><br>
+<div class="container">
+  <div class="grid_table">
+
+  <table class="tableau d-flex justify-content-center">
+  <tr>
+    <th>Position</th><th>Nom</th><th>Prénom</th><th>Dossard</th><th>Temps</th><th>Points</th>
+  </tr>
+
+  <% @positions.each do |position| %>
+    <tr>
+      <td><%= position.place %></td>
+      <td class="text-uppercase"><%= position.user.last_name %></td>
+      <td class="text-capitalize"><%= position.user.first_name %></td>
+      <td><%= position.user.race_number %></td>
+      <td><%= position.time.hour %>h<%= position.time.min %>min</td>
+      <td><%= position.point %></td>
+    </tr>
+  <% end %>
+  </table>
+    </div>
+</div>
 <%= render 'components/navbar-bottom-ranking' %>
