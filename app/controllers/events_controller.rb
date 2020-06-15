@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
   def index_favorited
     @events = current_user.events
-    @events = @events.where("date > ?", Time.now)
+    @events = @events.where("date > ?", Time.now).order('date ASC')
   end
 
   def index_day
@@ -47,6 +47,6 @@ class EventsController < ApplicationController
   private
 
   def current_events
-    @current_events = Event.where("date > ?", Time.now)
+    @current_events = Event.where("date > ?", Time.now).order('date ASC')
   end
 end

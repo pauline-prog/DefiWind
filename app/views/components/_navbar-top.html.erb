@@ -6,7 +6,25 @@
       <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953093/defi_oojc5a.png" width="130">
     </div>
     <div class="col-3 col-lg-3 text-center">
-      <%= image_tag "https://cdn.shopify.com/s/files/1/1191/6120/files/image_blog_6e7c93c1-bb3c-476d-87bf-9d1454eab8fe_grande.jpg?v=1548258237", class: "avatar dropdown-toggle" %>
+      <% if current_user %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+          <% if current_user.admin? %>
+            <%= link_to rails_admin_path do %>
+              <i class="fas fa-users-cog"></i>
+            <% end %>
+          <% end %>
+          <% if current_user.avatar.attached? %>
+            <%= link_to profile_path do %>
+              <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
+            <% end %>
+          <% else %>
+            <i class="far fa-user-circle avatar dropdown-toggle"></i>
+          <% end %>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <i class="far fa-user-circle avatar dropdown-toggle"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

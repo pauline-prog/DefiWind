@@ -1,9 +1,18 @@
 class PagesController < ApplicationController
   def home
-  	@posts = Post.all
+  	@posts = Post.all.order('created_at ASC')
+    @likes = Like.all
   end
 
   def meteo
+  end
+
+  def profile
+    if current_user
+      @user = current_user
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def like
