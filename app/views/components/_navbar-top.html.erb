@@ -18,7 +18,9 @@
               <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
             <% end %>
           <% else %>
-            <i class="far fa-user-circle avatar dropdown-toggle"></i>
+            <%= link_to profile_path do %>
+              <i class="far fa-user-circle avatar dropdown-toggle"></i>
+            <% end %>
           <% end %>
       <% else %>
         <%= link_to new_user_session_path do %>
