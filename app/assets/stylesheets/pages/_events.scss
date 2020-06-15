@@ -1,3 +1,5 @@
+// navbar events
+
 .menu-bar {
   border-radius: 25px;
   height: fit-content;
@@ -40,3 +42,37 @@
     }
   }
 }
+
+// list events
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: -10px 30px 0 30px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 0 20px 10px 0;
+}
+
+.favorite-heart {
+  position: relative;
+  bottom: 240px; left: 40px;
+}
+
+.card-category:hover {
+  transform: scale(1.05);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
