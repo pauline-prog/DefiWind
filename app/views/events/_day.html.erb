@@ -1,0 +1,27 @@
+<%= @event.date.day %>
+<% if @event.date.month == 1 %>
+  janvier
+<% elsif @event.date.month == 2 %>
+  février
+<% elsif @event.date.month == 3 %>
+  mars
+<% elsif @event.date.month == 4 %>
+  avril
+<% elsif @event.date.month == 5 %>
+  mai
+<% elsif @event.date.month == 6 %>
+  juin
+<% elsif @event.date.month == 7 %>
+  juillet
+<% elsif @event.date.month == 8 %>
+  août
+<% elsif @event.date.month == 9 %>
+  septembre
+<% elsif @event.date.month == 10 %>
+  octobre
+<% elsif @event.date.month == 11 %>
+  novembre
+<% elsif @event.date.month == 12 %>
+  décembre
+<% end %>
+<%= @event.date.year %>
