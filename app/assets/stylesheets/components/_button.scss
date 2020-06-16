@@ -34,6 +34,30 @@
   transform: translate(-50%, -50%);
 }
 
+.btn-events {
+  width: 75px;
+}
+
+@media (min-width: 800px) {
+  .btn-events {
+    width: 140px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .btn-events {
+    width: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-events {
+    width: 220px;
+  }
+}
+
+// gradient
+
 .btn-gradient {
   width: 186px;
   height: 50px;
@@ -71,5 +95,9 @@
     position: relative;
     top: 16px;
   }
+}
+
+.btn-event {
+  width: 186px;
 }
 
