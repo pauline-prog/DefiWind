@@ -1,0 +1,56 @@
+
+.button-container {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-events {
+  width: 90px;
+  margin: 5px 0 -10px 0;
+  height: 50px;
+}
+
+.btn-event {
+  width: 186px;
+}
+
+.btn-gradient {
+  height: 50px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 50px;
+
+  &:after {
+    position: absolute;
+    content:'';
+    display: inline-block;
+    background: rgba(251, 216, 126, 1);
+    background: linear-gradient(45deg, rgba(251, 216, 126, 1) 0%, rgba(249, 198, 71, 1) 25%, rgba(249, 152, 72, 1) 51%, rgba(232, 55, 59, 1) 100%);
+    height: 50px;
+    width: 372px;
+    z-index: -1;
+    transform: translateX(-280px);
+    transition: transform 400ms ease-in;
+  }
+
+  &:hover {
+    &:after {
+      transform: translateX(-200px);
+    }
+    color: white;
+  }
+  span {
+    position: relative;
+    top: 16px;
+  }
+}
+
