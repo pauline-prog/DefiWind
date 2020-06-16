@@ -19,10 +19,12 @@
         <td><%= position.user.race_number %></td>
         <td><%= position.time.hour %>h<%= position.time.min %>min</td>
         <td><%= position.point %></td>
+
       </div>
     </tr>
   <% end %>
   </table>
     </div>
 </div>
+<%=line_chart current_user.positions%>
 <%= render 'components/navbar-bottom-ranking' %>
