@@ -56,20 +56,10 @@
   }
 }
 
-.btn-event {
-  width: 186px;
-}
-
-@media (min-width: 1200px) {
-  .btn-event {
-    width: 280px;
-  }
-}
-
-
 // gradient
 
 .btn-gradient {
+  width: 186px;
   height: 50px;
   display: block;
   position: relative;
@@ -105,5 +95,9 @@
     position: relative;
     top: 16px;
   }
+}
+
+.btn-event {
+  width: 186px;
 }
 

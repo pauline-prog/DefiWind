@@ -41,7 +41,32 @@ class EventsController < ApplicationController
     else
       Favorite.create(user: current_user, event: @event)
     end
-    redirect_to request.referrer
+    if request.referrer.include?("localhost")
+      url = "http://localhost:3000"
+    elsif request.referrer.include?("lololegall")
+      url = "https://defiwind-lololegall.herokuapp.com"
+    else
+      url = "https://defiwind.herokuapp.com"
+    end
+    if request.referrer == "#{url}/events"
+      redirect_to events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer  == "#{url}/events/event-%"
+      redirect_to events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/day_events"
+      redirect_to day_events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/day_events/event-%"
+      redirect_to day_events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/night_events"
+      redirect_to night_events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/night_events/event-%"
+      redirect_to night_events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/favorited_events"
+      redirect_to favorited_events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/favorited_events/event-%"
+      redirect_to favorited_events_path(anchor: "event-#{@event.id}")
+    elsif request.referrer == "#{url}/event/%"
+      redirect_to event_path(@event)
+    end
   end
 
   private
