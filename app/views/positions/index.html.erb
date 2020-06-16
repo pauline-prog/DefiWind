@@ -1,29 +1,42 @@
+
 <%= render 'components/navbar-top-back' %>
-    
-<%= form_tag positions_path, method: :get do %>
-  <%= text_field_tag :user_query, params[:user_query], placeholder: "Oscar Dupont ou votre numéro de dossard"%>
-  <%= submit_tag "Rechercher", class: "btn" %>
-<% end %>
 
-  <table class="tableau d-flex justify-content-center">
-  <tr>
-    <th>Position</th><th>Nom</th><th>Prénom</th><th>Dossard</th><th>Temps</th><th>Points</th>
-  </tr>
+<div class="card">
+  <p>Classement Général 💪</p>
+</div>
 
-  <% @positions.each do |position| %>
-    <tr>
-      <div id="position-<%= position.id %>
-        <td><%= position.place %></td>
-        <td class="text-uppercase"><%= position.user.last_name %></td>
-        <td class="text-capitalize"><%= position.user.first_name %></td>
-        <td><%= position.user.race_number %></td>
-        <td><%= position.time.hour %>h<%= position.time.min %>min</td>
-        <td><%= position.point %></td>
-      </div>
-    </tr>
+<div class="classement d-flex justify-content-center">
+  <%= form_tag positions_path, method: :get do %>
+    <%= text_field_tag :user_query, params[:user_query], placeholder: "Oscar Dupont ou votre numéro de dossard", class: 'input-search' %>
+    <%= submit_tag "Rechercher", class: "btn-classement" %>
   <% end %>
+</div>
+
+<div class="responsive-table-line" style="margin:0px auto;max-width:700px;">
+  <table class="table-striped justify-content-center">
+    <thead class="result thead-light">
+      <tr>
+        <th scope="col">Position</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Temps</th>
+        <th scope="col">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% @positions.each do |position| %>
+        <div id="position"><%= position.id %>
+          <td><%= position.place %></td>
+          <td class="text-uppercase"><%= position.user.last_name %></td>
+          <td class="text-capitalize"><%= position.user.first_name %></td>
+          <td><%= position.time.hour %>h<%= position.time.min %>min</td>
+          <td><%= position.point %></td>
+        </div>
+      <% end %>
+      </tr>
+    </tbody>
   </table>
-    </div>
 </div>
 <%= render 'components/navbar-bottom-ranking' %>
 
