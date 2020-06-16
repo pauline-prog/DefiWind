@@ -6,36 +6,34 @@
   <% if @event.photo.attached? %>
     <%= cl_image_tag @event.photo.key, width:'500px', height:'auto' %>
   <% else %>
-    <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/briefing2_aokmnw.jpg" width="500">
+    <img src="https://static.wixstatic.com/media/dc92a4_c59f606c98a94f9cb4a1df7d4190ab9d~mv2.jpg" width="500">
   <% end %>
 
   <div class="event-box-infos">
+
     <div>
       <h2><%= @event.title %></h2>
-      <p><img src="/assets/calendar.png" width="23"><%= render 'events/day' %>
-        <img src="/assets/clock.png" width="20"><%= render 'events/hour' %></p>
+      <p><img src="/assets/calendar.png" width="23">  <%= render 'events/day' %>
+        <img src="/assets/clock.png" width="20">  <%= render 'events/hour' %></p>
       <hr>
       <p><strong>DÉTAILS DE L'ÉVÉNEMENT</strong></p>
       <p><%= @event.description %></p>
     </div>
-    <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" class="event-box-heart avatar-bordered bg-white" />
+    <%= link_to new_favorite_path(@event.id), method: :post, remote: true do %>
+      <% if current_user.events.include?(@event) %>
+        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" class="event-box-heart avatar-bordered bg-white"></i>
+      <% else %>
+        <i><img src="/assets/likeblack.png" class="event-box-heart avatar-bordered bg-white"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
-<div class="button-container">
-  <a href="#" class="btn-gradient btn-event"><span>+ Favoris</span></a>
-</div>
-
-
-
-
-  <%= link_to event_path(@event.id), method: :post, remote: true do %>
-    <% if current_user.events.include?(@event) %>
-      <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
-    <% else %>
-      <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
-    <% end %>
-  <% end %>
+<%= link_to favorited_events_path do %>
+  <div class="button-container">
+    <span class="btn-gradient btn-event">Mes favoris</span>
+  </div>
+<% end %>
 
 <br><br><br><br>
 

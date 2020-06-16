@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :current_events, only: [:index, :index_day, :index_night]
-  
+
   def index
     @events = @current_events
   end
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     else
       Favorite.create(user: current_user, event: @event)
     end
-    redirect_to events_path(anchor: "event-#{@event.id}")
+    redirect_to request.referrer
   end
 
   private

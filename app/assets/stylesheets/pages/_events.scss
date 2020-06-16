@@ -1,14 +1,3 @@
-// navbar events
-
-.menu-bar {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 10px;
-  margin: 90px 40px 0 40px;
-}
-
-
-
 // list events
 
 .card-category {
@@ -32,6 +21,7 @@
 .favorite-heart {
   position: relative;
   bottom: 240px; left: 40px;
+  width: 90%;
 }
 
 .card-category:hover {
@@ -84,4 +74,11 @@ a:hover {
   top: -30px;
   width: 60px;
   border: white 15px solid;
+}
+
+@media (min-width: 1200px) {
+  .event-box-infos .event-box-heart {
+    position: absolute;
+    right: 80px;
+  }
 }
