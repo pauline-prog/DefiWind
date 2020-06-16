@@ -11,7 +11,7 @@ class PositionsController < ApplicationController
         OR last_name ILIKE :user_query \
         OR race_number ILIKE :user_query"
   	  # @user_position = Position.joins(:user).where(sql_query, user_query: "%#{params[:user_query]}%")
-  	  @user_position = Position.search_by_user_id("%#{params[:user_query]}%")
+  	  @user_position = Position.global_search("%#{params[:user_query]}%").first
       redirect_to positions_path(@positions, anchor: "position-#{@user_position.id}")
   	end
   end
