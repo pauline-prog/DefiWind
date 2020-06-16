@@ -5,6 +5,18 @@
   <p>Classement Général 💪</p>
 </div>
 
+  <% @positions.each do |position| %>
+    <tr>
+      <div id="position-<%= position.id %>">
+        <td><%= position.place %></td>
+        <td class="text-uppercase"><%= position.user.last_name %></td>
+        <td class="text-capitalize"><%= position.user.first_name %></td>
+        <td><%= position.user.race_number %></td>
+        <td><%= position.time.hour %>h<%= position.time.min %>min</td>
+        <td><%= position.point %></td>
+
+      </div>
+    </tr>
 <div class="classement d-flex justify-content-center">
   <%= form_tag positions_path, method: :get do %>
     <%= text_field_tag :user_query, params[:user_query], placeholder: "Oscar Dupont ou votre numéro de dossard", class: 'input-search' %>
@@ -38,4 +50,5 @@
     </tbody>
   </table>
 </div>
+<%=line_chart current_user.positions%>
 <%= render 'components/navbar-bottom-ranking' %>
