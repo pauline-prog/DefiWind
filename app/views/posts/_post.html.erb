@@ -7,16 +7,16 @@
       <% if post.photo.attached? %>
         <%= cl_image_tag post.photo.key, width:'500px', height: 'auto' %>
       <% elsif post.video.attached? %>
-        <%= cl_video_tag post.video.key, controls: '', width: '400px', height: 'auto' %>
+        <%= cl_video_tag post.video.key, controls: '', width: '500px', height: 'auto' %>
       <% end %>
     </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-12 col-lg-8 mt-3 pl-3">
-      <% if current_user %>
+      <% if user %>
         <%= link_to new_like_path(post.id), method: :post, remote: true do %>
-          <% if current_user.posts.include?(post) %>
+          <% if user.posts.include?(post) %>
             <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
           <% else %>
             <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953091/like_iuqp0i.png" width="35"></i>

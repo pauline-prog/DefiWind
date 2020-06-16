@@ -1,19 +1,22 @@
 <% events.each do |event| %>
-  <div id="event-<%= event.id %>">
-  <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
-    <% if current_user.events.include?(event) %>
-      <i class="fas fa-heart"></i>
-    <% else %>
-      <i class="far fa-heart"></i>
-    <% end %>
-  <% end %>
+
   <%= link_to event_path(event.id) do %>
-    <% if event.photo.attached? %>
-      <%= cl_image_tag event.photo.key %>
-    <% end %>
-    <p><strong><%= event.title %></strong></p>
-    <p><%= event.description %></p>
-    <p><%= event.date.day %>/<%= event.date.month %>/<%= event.date.year %> <%= event.date.hour %>h <%= event.date.hour %>min</p>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= event.date.hour %>H<%= event.date.min %> - <%= event.date.day %>/<%= event.date.month %>/<%= event.date.year %>
+      <br>
+      <%= event.title %>
+    </div>
   <% end %>
+  <div class="favorite-heart">
+    <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
+      <% if current_user.events.include?(event) %>
+        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
+      <% else %>
+        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
+      <% end %>
+    <% end %>
   </div>
+
 <% end %>
+
+<br><br><br>

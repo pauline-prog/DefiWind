@@ -1,20 +1,42 @@
+<%= render 'components/navbar-top-back' %>
 
-<body>
-  <div class="container2">
-    <%= render 'components/navbar-top' %>
-    <div class="photo_show">
-    <% if @event.photo.attached? %>
-      <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/briefing2_aokmnw.jpg" width="450">
-    <% end %>
-    </div>
-    <div class="Productshow_container">
-      <h1><%= @event.title %></h1>
-      <p><%= @event.date %></p>
-      <br>
+<br>
+
+<div class="event-box">
+  <% if @event.photo.attached? %>
+    <%= cl_image_tag @event.photo.key, width:'500px', height:'auto' %>
+  <% else %>
+    <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/briefing2_aokmnw.jpg" width="500">
+  <% end %>
+
+  <div class="event-box-infos">
+    <div>
+      <h2><%= @event.title %></h2>
+      <p><img src="/assets/calendar.png" width="23"><%= render 'events/day' %>
+        <img src="/assets/clock.png" width="20"><%= render 'events/hour' %></p>
+      <hr>
+      <p><strong>DÉTAILS DE L'ÉVÉNEMENT</strong></p>
       <p><%= @event.description %></p>
     </div>
-    <%= render 'components/navbar-bottom-home' %>
+    <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" class="event-box-heart avatar-bordered bg-white" />
   </div>
-</body>
+</div>
+
+<div class="button-container">
+  <a href="#" class="btn-gradient btn-event"><span>+ Favoris</span></a>
+</div>
+
+
+
+
+  <%= link_to event_path(@event.id), method: :post, remote: true do %>
+    <% if current_user.events.include?(@event) %>
+      <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
+    <% else %>
+      <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
+    <% end %>
+  <% end %>
+
+<br><br><br><br>
+
+<%= render 'components/navbar-bottom-home' %>

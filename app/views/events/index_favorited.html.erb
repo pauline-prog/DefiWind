@@ -1,21 +1,21 @@
-<%= render 'components/navbar-top-back' %>
+<%= render 'components/navbar-top' %>
 
 <ul class="menu-bar d-flex justify-content-around">
   <%= link_to events_path do %>
-    <li class="text-uppercase font-weight-light">Tous</li>
+    <li class="btn-gradient btn-events font-weight-light">Tous</li>
   <% end %>
   <%= link_to day_events_path do %>
-    <li class="text-uppercase font-weight-light">Journée</li>
+    <li class="btn-gradient btn-events font-weight-light">Journée</li>
   <% end %>
   <%= link_to night_events_path do %>
-    <li class="text-uppercase font-weight-light">Soirée</li>
+    <li class="btn-gradient btn-events font-weight-light">Soirée</li>
   <% end %>
   <%= link_to favorited_events_path do %>
-    <li class="text-uppercase">Favoris</li>
+    <li class="btn-gradient btn-events font-weight-bold">Favoris</li>
   <% end %>
 </ul>
 
-<h2>Mes favoris</h2>
+<br><br>
 
 <%= render 'shared_index', events: @events %>
 
