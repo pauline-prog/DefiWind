@@ -1,12 +1,18 @@
 <% events.each do |event| %>
 
   <%= link_to event_path(event.id) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <% if event.photo.attached? %>
+      <div class="card-category" style="background-image: url(<%= cl_image_path(event.photo.key) %>)">
+    <% else %>
+      <div class="card-category" style="background-image: url(https://static.wixstatic.com/media/dc92a4_c59f606c98a94f9cb4a1df7d4190ab9d~mv2.jpg)">
+    <% end %>
       <%= event.date.hour %>H<%= event.date.min %> - <%= event.date.day %>/<%= event.date.month %>/<%= event.date.year %>
       <br>
       <%= event.title %>
     </div>
   <% end %>
+
+
   <div class="favorite-heart">
     <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
       <% if current_user.events.include?(event) %>

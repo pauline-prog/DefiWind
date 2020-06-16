@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :posts, through: :likes
   has_many :events, through: :favorites
+  has_many :group_rankings, dependent: :destroy
   # include PgSearch
   # multisearchable against: [:first_name, :last_name, :race_number]
 end

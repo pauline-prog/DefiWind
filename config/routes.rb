@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
   resources :positions, only: :index
   resources :users, only: [:edit, :update]
+  resources :group_rankings, only: [:index]
 end
