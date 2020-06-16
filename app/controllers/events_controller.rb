@@ -42,17 +42,19 @@ class EventsController < ApplicationController
       Favorite.create(user: current_user, event: @event)
     end
 
-    if current_page?(event_path)
-      redirect_to event_path
-    elsif current_page?(day_events_path)
-      redirect_to day_events_path(anchor: "event-#{@event.id}")
-    elsif current_page?(night_events_path)
-      redirect_to night_events_path(anchor: "event-#{@event.id}")
-    elsif current_page?(favorited_events_path)
-      redirect_to favorited_events_path(anchor: "event-#{@event.id}")
-    else
-      redirect_to events_path(anchor: "event-#{@event.id}")
-    end
+
+
+    # if current_page?(controller: 'event', action: 'show')
+    #   redirect_to event_path(@event)
+    # # # elsif current_page?(day_events_path)
+    # # #   redirect_to day_events_path(anchor: "event-#{@event.id}")
+    # # # elsif current_page?(night_events_path)
+    # # #   redirect_to night_events_path(anchor: "event-#{@event.id}")
+    # # # elsif current_page?(favorited_events_path)
+    # # #   redirect_to favorited_events_path(anchor: "event-#{@event.id}")
+    # else
+    #   redirect_to events_path(anchor: "event-#{@event.id}")
+    # end
   end
 
   private

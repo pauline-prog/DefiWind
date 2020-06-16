@@ -22,9 +22,11 @@
   </div>
 </div>
 
-<div class="button-container">
-  <a href="#" class="btn-gradient btn-event"><span>+ Favoris</span></a>
-</div>
+<%= link_to events_path do %>
+  <div class="button-container">
+    <span class="btn-gradient btn-event">+ Favoris</span>
+  </div>
+<% end %>
 
 
   <%= link_to new_favorite_path(@event.id), method: :post, remote: true do %>

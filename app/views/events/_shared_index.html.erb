@@ -1,7 +1,6 @@
 <% events.each do |event| %>
 
   <%= link_to event_path(event.id) do %>
-
     <% if event.photo.attached? %>
       <div class="card-category" style="background-image: url(<%= cl_image_path(event.photo.key) %>)">
     <% else %>
@@ -11,8 +10,9 @@
       <br>
       <%= event.title %>
     </div>
-
   <% end %>
+
+
   <div class="favorite-heart">
     <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
       <% if current_user.events.include?(event) %>

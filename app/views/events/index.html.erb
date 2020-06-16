@@ -1,8 +1,8 @@
 <%= render 'components/navbar-top' %>
 
-<div class="menu-bar d-flex justify-content-around">
+<div class="menu-bar d-flex justify-content-around button-container">
   <%= link_to events_path do %>
-    <span class="btn-gradient btn-events font-weight-bold">Tous</span>
+    <span class="btn-gradient font-weight-bold">Tous</span>
   <% end %>
   <%= link_to day_events_path do %>
     <span class="btn-gradient btn-events font-weight-light">Journée</span>
@@ -14,6 +14,31 @@
     <span class="btn-gradient btn-events font-weight-light">Favoris</span>
   <% end %>
 </div>
+
+
+<%= link_to events_path do %>
+  <div class="button-container-all">
+    <span class="btn-gradient btn-event">Tous</span>
+  </div>
+<% end %>
+
+<%= link_to day_events_path do %>
+  <div class="button-container-day">
+    <span class="btn-gradient btn-event">Journée</span>
+  </div>
+<% end %>
+
+<%= link_to night_events_path do %>
+  <div class="button-container-night">
+    <span class="btn-gradient btn-event">Soirée</span>
+  </div>
+<% end %>
+
+<%= link_to night_events_path do %>
+  <div class="button-container-favorite">
+    <span class="btn-gradient btn-event">Favoris</span>
+  </div>
+<% end %>
 
 <br><br>
 
