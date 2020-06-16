@@ -6,15 +6,68 @@
   transform: translate(-50%, -50%);
 }
 
+.button-container-all {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container-day {
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container-night {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container-favorite {
+  position: absolute;
+  top: 15%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
 .btn-events {
-  width: 90px;
-  margin: 5px 0 -10px 0;
-  height: 50px;
+  width: 75px;
+}
+
+@media (min-width: 800px) {
+  .btn-events {
+    width: 140px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .btn-events {
+    width: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-events {
+    width: 220px;
+  }
 }
 
 .btn-event {
   width: 186px;
 }
+
+@media (min-width: 1200px) {
+  .btn-event {
+    width: 280px;
+  }
+}
+
+
+// gradient
 
 .btn-gradient {
   height: 50px;
