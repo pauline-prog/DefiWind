@@ -1,8 +1,9 @@
 <%= render 'components/navbar-top-back' %>
-
-<br><br><br><br>
-<div class="container">
-  <div class="grid_table">
+    
+<%= form_tag positions_path, method: :get do %>
+  <%= text_field_tag :user_query, params[:user_query], placeholder: "Oscar Dupont ou votre numéro de dossard"%>
+  <%= submit_tag "Rechercher", class: "btn" %>
+<% end %>
 
   <table class="tableau d-flex justify-content-center">
   <tr>
@@ -11,12 +12,14 @@
 
   <% @positions.each do |position| %>
     <tr>
-      <td><%= position.place %></td>
-      <td class="text-uppercase"><%= position.user.last_name %></td>
-      <td class="text-capitalize"><%= position.user.first_name %></td>
-      <td><%= position.user.race_number %></td>
-      <td><%= position.time.hour %>h<%= position.time.min %>min</td>
-      <td><%= position.point %></td>
+      <div id="position-<%= position.id %>
+        <td><%= position.place %></td>
+        <td class="text-uppercase"><%= position.user.last_name %></td>
+        <td class="text-capitalize"><%= position.user.first_name %></td>
+        <td><%= position.user.race_number %></td>
+        <td><%= position.time.hour %>h<%= position.time.min %>min</td>
+        <td><%= position.point %></td>
+      </div>
     </tr>
   <% end %>
   </table>

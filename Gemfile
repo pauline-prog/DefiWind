@@ -7,6 +7,8 @@ gem "rails_admin_import", "~> 2.2"
 
 gem 'rails_admin', '~> 2.0'
 
+gem 'pg_search'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgresql as the database for Active Record

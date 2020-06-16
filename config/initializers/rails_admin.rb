@@ -12,7 +12,7 @@ RailsAdmin.config do |config|
   config.included_models = [ "User", "Event", "Post", "Position" ]
   config.model 'User' do
     import do
-      mapping_key :email
+      mapping_key :race_number
       field :first_name
       field :last_name
       field :email
@@ -22,8 +22,8 @@ RailsAdmin.config do |config|
   end
   config.model 'Position' do
     import do
-      field :user_id
-      field :event_id
+      field :user
+      field :event
       field :point
       field :place
       field :time
