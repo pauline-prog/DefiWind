@@ -1,0 +1,29 @@
+.classement_friend {
+  padding-top: 20px;
+  padding-right: 3%;
+  padding-left: 3%;
+  padding-bottom: 20px;
+}
+
+.btn-classementfr {
+  color: white;
+  border-radius: 10px;
+  background: $my-blue;
+  padding: 3px 24px;
+  margin-left: 23%;
+}
+
+
+.btn-classementfr:hover {
+  opacity: 2;
+  background: #0E3D93;
+  text-decoration: none;
+  color: white;
+}
+
+.input-classement {
+  border-radius: 10px;
+  margin-bottom: 3%;
+  margin-left: 8%;
+  background: white;
+}

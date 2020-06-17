@@ -1,32 +1,33 @@
 .card {
   height: 150px; /*1*/
   margin: 0px auto; /*2*/
-  background-color: $my-blue; /*3*/
+  background: linear-gradient(45deg, rgba(251, 216, 126, 1) 0%, rgba(249, 198, 71, 1) 25%, rgba(249, 152, 72, 1) 51%, rgba(232, 55, 59, 1) 100%); /*3*/
   color: white;
   text-align: center;
+  border-bottom-right-radius: 3rem 3rem;
+  border-bottom-left-radius: 3rem 3rem;
 }
 
 .card p {
   padding-top: 105px;
   text-align: center;
   font-size: 24px;
-  font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
 
 .result {
-  background-color: #C5D0FD;
+  background-color: #292929;
 }
 
 
 table {
   width: 100%;
-  color: black;
   font-family: 'Roboto', sans-serif;
   }
 
   th {
     height: 50px;
+    color: white;
   }
   tr {
     flex-orientation: row;
@@ -40,6 +41,7 @@ table {
     margin: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: black;
   }
   .grid_table {
     border: 1px solid grey;
@@ -62,14 +64,14 @@ tbody {
 .btn-classement {
   color: white;
   border-radius: 5px;
-  background: $my-blue;
+  background: #292929;
   padding: 3px 12px;
 }
 
 
 .btn-classement:hover {
   opacity: 2;
-  background: #0E3D93;
+  background: #1a1919;
   text-decoration: none;
   color: white;
 }
