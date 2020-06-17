@@ -22,6 +22,7 @@
 table {
   width: 100%;
   color: black;
+  font-family: 'Roboto', sans-serif;
   }
 
   th {
@@ -32,8 +33,9 @@ table {
     text-align: center;
   }
   th, td {
-
+    padding: 5px;
   }
+
   td {
     margin: 20px;
     padding-top: 10px;
@@ -54,13 +56,14 @@ tbody {
   padding-top: 20px;
   padding-right: 3%;
   padding-left: 3%;
+  padding-bottom: 20px;
 }
 
 .btn-classement {
   color: white;
   border-radius: 5px;
   background: $my-blue;
-  padding: 3px 12px
+  padding: 3px 12px;
 }
 
 
