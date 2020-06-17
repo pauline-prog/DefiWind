@@ -26,7 +26,9 @@
       <i class="far fa-edit edit profile"></i>
     <% end %>
   </div>  
+  <div class="row">
+    <%= line_chart current_user.position_for_graph %>
+  </div>
 </div>
 
-<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= line_chart current_user.position_for_graph %>
+
