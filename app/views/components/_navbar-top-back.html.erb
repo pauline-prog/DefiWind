@@ -9,24 +9,41 @@
       <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953093/defi_oojc5a.png" width="130">
     </div>
     <div class="col-3 col-lg-3 text-center">
+
       <% if current_user %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
-          <% if current_user.admin? %>
-            <%= link_to rails_admin_path do %>
-              <i class="fas fa-users-cog"></i>
-            <% end %>
-          <% end %>
+        <% if current_user.admin? %>
+          <div class="btn-group dropdown">
+
+            <img src="https://ca.slack-edge.com/T02NE0241-U012B0V8Z0C-5a6d024e5d2e-512" width='40px' height='40px' class="round-img rounded-circle dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <div class="dropdown-menu dropdown-menu-right dropdown-content">
+              <%= link_to profile_path do %>
+                <button class="dropdown-item" type="button">Profil</button>
+              <% end %>
+              <%= link_to rails_admin_path do %>
+                <button class="dropdown-item" type="button">Dashboard</button>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <button class="dropdown-item" type="button">Déconnexion</button>
+              <% end %>
+            </div>
+          </div>
+        <% else %>
           <% if current_user.avatar.attached? %>
             <%= link_to profile_path do %>
-              <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
+              <%= cl_image_tag current_user.avatar.key, class: 'rounded-circle', height: '40px', width: '40px' %>
             <% end %>
           <% else %>
-            <i class="far fa-user-circle avatar dropdown-toggle"></i>
+            <img src="/assets/user.png" width='40px' height='40px'>
           <% end %>
+        <% end %>
+
       <% else %>
         <%= link_to new_user_session_path do %>
-          <i class="far fa-user-circle avatar dropdown-toggle"></i>
+          <img src="/assets/user.png" width='40px' height='40px'>
         <% end %>
-      <% end %>    </div>
+      <% end %>
+
+    </div>
   </div>
 </div>
