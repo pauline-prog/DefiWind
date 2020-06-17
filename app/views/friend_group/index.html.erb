@@ -1,32 +1,56 @@
 <%= render 'components/navbar-top-back' %>
 
 <div class="card">
-  <p>Classement entre amis 💪</p>
+  <p>Classement général entre amis 💪</p>
 </div>
 
 <div class="classement_friend d-flex justify-content-center">
-  <%= form_tag friend_group_index_path, method: :get do %>
+  <% @events = Event.where(course: true) %>
+  <%= form_tag friend_group_index_path, method: :get, style: 'height: auto' do %>
     <%= label_tag "Créer un classement entre amis" %><br>
-    <%= text_field_tag :event, params[:event], placeholder: "Type in event title", class: 'input-classement' %><br>
-    <%= text_field_tag :first_query, params[:first_query], placeholder: "Oscar Dupont ou numéro de dossard", class: 'input-classement' %><br>
-    <%= text_field_tag :second_query, params[:second_query], placeholder: "Oscar Dupont ou numéro de dossard", class: 'input-classement' %><br>
+    <%= select_tag "course", options_from_collection_for_select(@events, "id", "title"), prompt: "Course", class: 'input-classement' %> 
+    <%= text_field_tag :first_query, params[:first_query], placeholder: "Nom, Prénom ou n° de dossard", id: 'first', class: 'input-classement' %><br>
+    <%= text_field_tag :second_query, params[:second_query], placeholder: "Nom, Prénom ou n° de dossard", id: 'second', class: 'input-classement' %><br>
     <%= submit_tag "Rechercher", class: "btn-classementfr" %>
+
   <% end %>
 </div>
-  <% if @friend_groups != nil %>
+
+<% if @friend_groups != nil %>
+<div class="container">
+  <div class="responsive-table-line" style="margin:0px auto;">
+  <table class="table-striped justify-content-center">
+    <thead class="result thead-light">
+      <tr>
+        <th scope="col">Course</th>
+        <th scope="col">Position</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Temps</th>
+        <th scope="col">Points</th>
+      </tr>
+    </thead>
+    <tbody>
     <% @friend_groups.each do |friend_group| %>
+      <tr>
       <% users = friend_group.users %>
       <% users.each do |user| %>
         <% positions = user.positions %>
         <% positions = positions.where(event_id: friend_group.event_id) %>
         <% positions.each do |position| %>
-          <%= position.place %>
-          <%= user.last_name %>
-          <%= user.first_name %>
-          <%= position.point %>
+            <tr>
+              <td><%= friend_group.event.title %></td>
+              <td><%= position.place %></td>
+              <td class="text-uppercase"><%= user.last_name %></td>
+              <td class="text-capitalize"><%= user.first_name %></td>
+              <td><%= position.time.hour %>h<%= position.time.min %>min</td>
+              <td><%= position.point %></td>
+            </tr>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
+</div>
 
 <%= render 'components/navbar-bottom-ranking' %>
