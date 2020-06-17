@@ -1,5 +1,6 @@
+<%= render 'components/navbar-top-back' %>
+
 <div class="bg-pass">
-  <%= render 'components/navbar-top' %>
   <h4>Mot de passe oublié ?</h4>
   <div class="row card_pass m-center3">
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -19,5 +20,6 @@
 
     <%= render "devise/shared/links" %>
   </div>
-  <%= render 'components/navbar-bottom-home' %>
 </div>
+
+<%= render 'components/navbar-bottom-profile' %>
