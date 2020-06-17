@@ -34,13 +34,13 @@
               <%= cl_image_tag current_user.avatar.key, class: 'rounded-circle', height: '40px', width: '40px' %>
             <% end %>
           <% else %>
-            <img src="/assets/user.png" width='40px' height='40px'>
+            <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953093/user_j57w9d.png" width='40px' height='40px'>
           <% end %>
         <% end %>
 
       <% else %>
         <%= link_to new_user_session_path do %>
-          <img src="/assets/user.png" width='40px' height='40px'>
+          <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953093/user_j57w9d.png" width='40px' height='40px'>
         <% end %>
       <% end %>
 
