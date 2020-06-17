@@ -1,12 +1,12 @@
 <%= render 'components/navbar-top-back' %>
 
 <div class="card">
-  <p>ClASSEMENT GÉNÉRAL 💪</p>
+  <p>CLASSEMENT GÉNÉRAL 💪</p>
 </div>
 
 <div class="classement d-flex justify-content-center">
   <%= form_tag positions_path, method: :get do %>
-    <%= text_field_tag :user_query, params[:user_query], placeholder: "Oscar Dupont ou votre numéro de dossard", class: 'input-search' %>
+    <%= text_field_tag :user_query, params[:user_query], placeholder: "Votre nom ou prénom", class: 'input-search' %>
     <%= submit_tag "Rechercher", class: "btn-classement" %>
   <% end %>
 </div>
@@ -35,4 +35,5 @@
     </tbody>
   </table>
 </div>
+
 <%= render 'components/navbar-bottom-ranking' %>

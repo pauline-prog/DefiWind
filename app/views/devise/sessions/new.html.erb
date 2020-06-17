@@ -8,7 +8,7 @@
       <div class="form-inputs">
         <%= f.input :email,
                     label: "Email",
-                    placeholder: "oscar.dupont@gmail.com",
+                    placeholder: "oscar.berthemet@gmail.com",
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email", class: 'inputForm' } %>
@@ -16,7 +16,7 @@
                     label: "Mot de passe",
                     placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
                     required: false,
-                    input_html: { autocomplete: "current-password", class: 'inputForm' } %>
+                    input_html: { autocomplete: "******", class: 'inputForm' } %>
         <%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
       </div>
 

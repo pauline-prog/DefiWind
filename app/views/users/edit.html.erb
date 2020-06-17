@@ -6,15 +6,17 @@
     <%= simple_form_for(@user, url: user_path, method: :patch) do |f| %>
       <%= f.input :first_name, label: 'Prénom', placeholder: 'Oscar', input_html: { class: 'inputFor' } %>
       <%= f.input :last_name, label: 'Nom de famille', placeholder: 'Dupont', input_html: { class: 'inputFor' } %>
-      <%= f.input :username, label: 'Surnom', input_html: { class: 'inputFor' } %>
-      <%= f.input :location, label: "Ville d'origine", placeholder: 'Marseille', input_html: { class: 'inputFor' } %>
+      <%= f.input :username, label: "Nom d'utilisateur", input_html: { class: 'inputFor' } %>
+      <%= f.input :location, label: "Ville, Pays", placeholder: 'Marseille', input_html: { class: 'inputFor' } %>
       <%= f.label :avatar, label: 'Photo de profil' %>
       <%= f.file_field :avatar, class: "mb-3" %>
       <%= f.label :photo, label: 'Photo de couverture' %>
       <%= f.file_field :photo, class: "mb-3" %>
       <%= f.submit 'VALIDER', class: "btn btn-profile mb-2" %>
     <% end %>
-    <%= link_to 'Changer de mot de passe', edit_user_registration_path %>
+    <%= link_to edit_user_registration_path do %>
+      <p>Modifier le mot de passe</p>
+    <% end %>
   </div>
 </div>
 
