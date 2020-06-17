@@ -14,6 +14,11 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :posts, through: :likes
   has_many :events, through: :favorites
-  # include PgSearch
-  # multisearchable against: [:first_name, :last_name, :race_number]
+  has_one :friend_groups_users, dependent: :destroy
+  include PgSearch::Model
+  pg_search_scope :search_by_names_and_race_number,
+    against: [:first_name, :last_name, :race_number],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

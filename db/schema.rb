@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_152127) do
+ActiveRecord::Schema.define(version: 2020_06_17_135427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,27 @@ ActiveRecord::Schema.define(version: 2020_06_15_152127) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_favorites_on_event_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "friend_groups", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "created_by_id"
+    t.bigint "event_id"
+    t.index ["created_by_id"], name: "index_friend_groups_on_created_by_id"
+    t.index ["event_id"], name: "index_friend_groups_on_event_id"
+  end
+
+  create_table "friend_groups_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "friend_group_id"
+    t.index ["friend_group_id"], name: "index_friend_groups_users_on_friend_group_id"
+    t.index ["user_id"], name: "index_friend_groups_users_on_user_id"
+  end
+
+  create_table "group_rankings_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "group_ranking_id", null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -125,4 +146,6 @@ ActiveRecord::Schema.define(version: 2020_06_15_152127) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "friend_groups", "events"
+  add_foreign_key "friend_groups", "users", column: "created_by_id"
 end
