@@ -25,13 +25,12 @@
     <% end %>
   </div>
   <div class="p-haut-info">
-    <div class="p-haut-item">
-      <p>#<%= current_user.race_number %> &nbsp • &nbsp <%= current_user.first_name.upcase %> <%= current_user.last_name.upcase %> &nbsp • &nbsp <%= current_user.location.upcase %></p>
-    </div>
+    <p>#<%= current_user.race_number %> &nbsp • &nbsp <%= current_user.first_name.upcase %> <%= current_user.last_name.upcase %> &nbsp • &nbsp <%= current_user.location.upcase %></p>
   </div>
 </div>
 
-GRAPH
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<%=line_chart current_user.position_for_graph %>
 
 <div class="p-bas">
 <center>
@@ -60,6 +59,5 @@ GRAPH
   </div>
 </center>
 </div>
-<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%=line_chart current_user.position_for_graph %>
+
 <%= render 'components/navbar-bottom-profile' %>
