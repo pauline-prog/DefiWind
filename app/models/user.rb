@@ -17,4 +17,11 @@ class User < ApplicationRecord
   has_many :group_rankings, dependent: :destroy
   # include PgSearch
   # multisearchable against: [:first_name, :last_name, :race_number]
+  def position_for_graph
+    graph_positions = {}
+    self.positions.map do |position|
+      graph_positions[position.created_at] = position.place
+    end
+    return graph_positions
+  end
 end
