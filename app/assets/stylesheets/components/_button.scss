@@ -6,32 +6,26 @@
   transform: translate(-50%, -50%);
 }
 
-.button-container-all {
+.button-container-all, .button-container-day, .button-container-night, .button-container-favorite {
   position: absolute;
-  top: 15%;
-  left: 20%;
+  top: 14%;
   transform: translate(-50%, -50%);
+}
+
+.button-container-all {
+  left: 20%;
 }
 
 .button-container-day {
-  position: absolute;
-  top: 15%;
   left: 40%;
-  transform: translate(-50%, -50%);
 }
 
 .button-container-night {
-  position: absolute;
-  top: 15%;
   left: 60%;
-  transform: translate(-50%, -50%);
 }
 
 .button-container-favorite {
-  position: absolute;
-  top: 15%;
   left: 80%;
-  transform: translate(-50%, -50%);
 }
 
 .btn-events {
@@ -56,10 +50,14 @@
   }
 }
 
+.btn-event {
+  width: 186px;
+}
+
+
 // gradient
 
 .btn-gradient {
-  width: 186px;
   height: 50px;
   display: block;
   position: relative;
@@ -96,8 +94,3 @@
     top: 16px;
   }
 }
-
-.btn-event {
-  width: 186px;
-}
-

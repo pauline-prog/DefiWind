@@ -1,5 +1,6 @@
+<%= render 'components/navbar-top-back' %>
+
 <div class="bg-profile">
-  <%= render 'components/navbar-top' %>
   <div class="row card_profile m-center2">
     <h1>Modifier mon profil</h1>
     <%= simple_form_for(@user, url: user_path, method: :patch) do |f| %>
@@ -15,5 +16,6 @@
     <% end %>
     <%= link_to 'Changer de mot de passe', edit_user_registration_path %>
   </div>
-  <%= render 'components/navbar-bottom-home' %>
 </div>
+
+<%= render 'components/navbar-bottom-profile' %>
