@@ -1,3 +1,100 @@
+// Code Margaux
+
+// photo profil et couverture
+
+.photo-couverture {
+  overflow: hidden;
+}
+
+.photo-couverture > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.photo-couverture .photo-prof-box {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.photo-prof-box .photo-prof > img {
+  position: absolute;
+  left: 5%;
+  right: auto;
+  top: -65px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: 2px solid white;
+}
+
+
+
+// haut
+
+.p-haut {
+  margin: -70px 0 0 0;
+  border-bottom-right-radius: 3rem 3rem;
+  background-color: #F1F1F3;
+  padding: 20px 0 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-haut-username {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 40px;
+}
+
+.p-haut-username p {
+  font-size: 30px;
+}
+
+.p-haut-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 40px 0 40px;
+}
+
+
+
+// bas
+
+.p-bas {
+  border-top-left-radius: 3rem 3rem;
+  background-color: #F1F1F3;
+  padding: 20px 0 5px 0;
+}
+
+.p-haut p {
+  font-size: 12px;
+}
+
+.p-bas p {
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Code Pauline
+
 .profile-photos {
   margin-top: 80px;
 }
