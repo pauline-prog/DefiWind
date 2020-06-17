@@ -12,12 +12,17 @@
   <div class="event-box-infos">
 
     <div>
-      <h2><%= @event.title %></h2>
-      <p><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953090/calendar_ahxqni.png" width="23">  <%= render 'events/day' %>
-        <img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592323599/clock_vssmoh.png" width="20">  <%= render 'events/hour' %></p>
+      <h2><strong><%= @event.title %></strong></h2>
+      <div class="day-hour">
+        <div class="day">
+          <p><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953090/calendar_ahxqni.png" width="23">  <%= render 'events/day' %></p>
+        </div>
+        <div class="hour">
+          <p><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592323599/clock_vssmoh.png" width="20">  <%= render 'events/hour' %></p>
+        </div>
+      </div>
       <hr>
-      <p><strong>DÉTAILS DE L'ÉVÉNEMENT</strong></p>
-      <p><%= @event.description %></p>
+      <p><strong><%= @event.description %></strong></p>
     </div>
     <%= link_to new_favorite_path(@event.id), method: :post, remote: true do %>
       <% if current_user.events.include?(@event) %>
@@ -37,4 +42,4 @@
 
 <br><br><br><br>
 
-<%= render 'components/navbar-bottom-home' %>
+<%= render 'components/navbar-bottom-calendar' %>

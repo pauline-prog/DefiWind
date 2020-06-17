@@ -1,5 +1,6 @@
+<%= render 'components/navbar-top-back' %>
+
 <div class="bg-sign">
-  <%= render 'components/navbar-top' %>
   <h5>Changer de mot de passe</h5>
   <div class="row card_sign m-center">
     <%= simple_form_for(resource, as: resource_name, url: user_registration_path(), html: { method: :patch }) do |f| %>
@@ -44,5 +45,6 @@
       <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr(e) ?" }, method: :delete %></p>
       <%= link_to "Retour", :back, class: "btn-retour mt-2" %>
   </div>
-  <%= render 'components/navbar-bottom-profile' %>
 </div>
+
+<%= render 'components/navbar-bottom-profile' %>

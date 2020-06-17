@@ -1,23 +1,32 @@
-<%= form_tag friend_group_index_path, method: :get do %>
-  <%= label_tag "Créer un classement entre amis" %>
-  <%= text_field_tag :event, params[:event], placeholder: "Type in event title" %>
-  <%= text_field_tag :first_query, params[:first_query], placeholder: "Oscar Dupont ou numéro de dossard" %>
-  <%= text_field_tag :second_query, params[:second_query], placeholder: "Oscar Dupont ou numéro de dossard" %>
-  <%= submit_tag "Rechercher", class: "btn-classement" %>
-<% end %>
-<%= @friend_groups %>
-<% if @friend_groups != nil %>
-  <% @friend_groups.each do |friend_group| %>
-    <% users = friend_group.users %>
-    <% users.each do |user| %>
-      <% positions = user.positions %>
-      <% positions = positions.where(event_id: friend_group.event_id) %>
-      <% positions.each do |position| %>
-        <%= position.place %>
-        <%= user.last_name %>
-        <%= user.first_name %>
-        <%= position.point %>
+<%= render 'components/navbar-top-back' %>
+
+<div class="card">
+  <p>Classement entre amis 💪</p>
+</div>
+
+<div class="classement_friend d-flex justify-content-center">
+  <%= form_tag friend_group_index_path, method: :get do %>
+    <%= label_tag "Créer un classement entre amis" %><br>
+    <%= text_field_tag :event, params[:event], placeholder: "Type in event title", class: 'input-classement' %><br>
+    <%= text_field_tag :first_query, params[:first_query], placeholder: "Oscar Dupont ou numéro de dossard", class: 'input-classement' %><br>
+    <%= text_field_tag :second_query, params[:second_query], placeholder: "Oscar Dupont ou numéro de dossard", class: 'input-classement' %><br>
+    <%= submit_tag "Rechercher", class: "btn-classementfr" %>
+  <% end %>
+</div>
+  <% if @friend_groups != nil %>
+    <% @friend_groups.each do |friend_group| %>
+      <% users = friend_group.users %>
+      <% users.each do |user| %>
+        <% positions = user.positions %>
+        <% positions = positions.where(event_id: friend_group.event_id) %>
+        <% positions.each do |position| %>
+          <%= position.place %>
+          <%= user.last_name %>
+          <%= user.first_name %>
+          <%= position.point %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
-<% end %>
+
+<%= render 'components/navbar-bottom-ranking' %>
