@@ -2,7 +2,7 @@
 
 <div class="bg-profile">
   <div class="row card_profile m-center2">
-    <h4>Modifier mon profil</h4>
+    <h1>Modifier mon profil</h1>
     <%= simple_form_for(@user, url: user_path, method: :patch) do |f| %>
       <%= f.input :first_name, label: 'Prénom', placeholder: 'Oscar', input_html: { class: 'inputFor' } %>
       <%= f.input :last_name, label: 'Nom de famille', placeholder: 'Dupont', input_html: { class: 'inputFor' } %>

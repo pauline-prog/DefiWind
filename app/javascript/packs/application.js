@@ -29,6 +29,7 @@ require("chart.js")
 
 // External imports
 import "bootstrap";
+import Chartkick from "chartkick"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,7 +39,48 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
+const search2 = document.getElementById('second')
+// const search3 = document.getElementById('third')
+const search4 = document.getElementById('fourth')
+const search5 = document.getElementById('fifth')
+const search6 = document.getElementById('sixth')
+const search7 = document.getElementById('seventh')
 
+// search2.addEventListener("click", (event) => {
+//   search3.style.display = "block";
+// })
+// search3.addEventListener("click", (event) => {
+//   search4.style.display = "block";
+// })
+// search4.addEventListener("click", (event) => {
+//   search5.style.display = "block";
+// })
+// search5.addEventListener("click", (event) => {
+//   search6.style.display = "block";
+// })
+// search6.addEventListener("click", (event) => {
+//   search7.style.display = "block";
+// })
+
+search2.addEventListener("click", (event) => {
+  search2.insertAdjacentHTML('afterend', '<input type="text" name="third_query" id="third" placeholder="Nom, Prénom ou n° de dossard" class="input-classement">');
+  const search3 = document.getElementById('third');
+  search3.addEventListener("click", (event) => {
+  	search3.insertAdjacentHTML('afterend', '<input type="text" name="fourth_query" id="fourth" placeholder="Nom, Prénom ou n° de dossard" class="input-classement">')
+    const search4 = document.getElementById('fourth');
+    search4.addEventListener("click", (event) => {
+  	  search4.insertAdjacentHTML('afterend', '<input type="text" name="fifth_query" id="fifth" placeholder="Nom, Prénom ou n° de dossard" class="input-classement">')
+      const search5 = document.getElementById('fifth');
+  	  search5.addEventListener("click", (event) => {
+  	    search5.insertAdjacentHTML('afterend', '<input type="text" name="sixth_query" id="sixth" placeholder="Nom, Prénom ou n° de dossard" class="input-classement">')
+        const search6 = document.getElementById('sixth');
+        search6.addEventListener("click", (event) => {
+  	      search6.insertAdjacentHTML('afterend', '<input type="text" name="seventh_query" id="seventh" placeholder="Nom, Prénom ou n° de dossard" class="input-classement">')
+        });
+      });
+    });
+  });
+})
 
 // const posts = document.querySelectorAll('.post');
 // posts.forEach(post => (

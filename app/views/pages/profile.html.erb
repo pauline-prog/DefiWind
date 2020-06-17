@@ -29,8 +29,7 @@
   </div>
 </div>
 
-<div class="p-graph">
-  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<div class="row p-graph">
   <%= line_chart current_user.position_for_graph %>
 </div>
 
@@ -63,3 +62,4 @@
 </div>
 
 <%= render 'components/navbar-bottom-profile' %>
+
