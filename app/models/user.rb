@@ -21,4 +21,11 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  def position_for_graph
+    graph_positions = {}
+    self.positions.map do |position|
+      graph_positions[position.created_at] = position.place
+    end
+    return graph_positions
+  end
 end

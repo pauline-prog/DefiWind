@@ -60,5 +60,6 @@ GRAPH
   </div>
 </center>
 </div>
-
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<%=line_chart current_user.position_for_graph %>
 <%= render 'components/navbar-bottom-profile' %>
