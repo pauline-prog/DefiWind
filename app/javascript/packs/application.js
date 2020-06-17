@@ -29,6 +29,7 @@ require("chart.js")
 
 // External imports
 import "bootstrap";
+import Chartkick from "chartkick"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
