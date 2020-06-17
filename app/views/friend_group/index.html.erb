@@ -8,10 +8,7 @@
   <% @events = Event.where(course: true) %>
   <%= form_tag friend_group_index_path, method: :get do %>
     <%= label_tag "Créer un classement entre amis" %><br>
-
     <%= select_tag "course", options_from_collection_for_select(@events, "id", "title"), prompt: "Course", class: 'input-classement' %> 
-
-    <%= text_field_tag :event, params[:event], placeholder: "Type in event title", class: 'input-classement' %><br>
     <%= text_field_tag :first_query, params[:first_query], placeholder: "Nom, Prénom ou n° de dossard", class: 'input-classement' %><br>
     <%= text_field_tag :second_query, params[:second_query], placeholder: "Nom, Prénom ou n° de dossard", class: 'input-classement' %><br>
     <%= text_field_tag :third_query, params[:third_query], placeholder: "Nom, Prénom ou n° de dossard", class: 'input-classement' %><br>
