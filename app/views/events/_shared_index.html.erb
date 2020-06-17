@@ -14,12 +14,16 @@
   <% end %>
 
   <div class="favorite-heart">
-    <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
-      <% if current_user.events.include?(event) %>
-        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
-      <% else %>
-        <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
+    <% if current_user %>
+      <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
+        <% if current_user.events.include?(event) %>
+          <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
+        <% else %>
+          <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
+        <% end %>
       <% end %>
+    <% else %>
+      <span class="br-large"></span>
     <% end %>
   </div>
 

@@ -18,13 +18,13 @@
 
             <div class="dropdown-menu dropdown-menu-right dropdown-content">
               <%= link_to profile_path do %>
-                <button class="dropdown-item" type="button">Profil</button>
+                <p class="dropdown-item" type="button">Profil</p>
               <% end %>
               <%= link_to rails_admin_path do %>
-                <button class="dropdown-item" type="button">Dashboard</button>
+                <p class="dropdown-item" type="button">Dashboard</p>
               <% end %>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <button class="dropdown-item" type="button">Déconnexion</button>
+                <p class="dropdown-item" type="button">Déconnexion</p>
               <% end %>
             </div>
           </div>
