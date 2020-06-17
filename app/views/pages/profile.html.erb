@@ -29,8 +29,10 @@
   </div>
 </div>
 
-<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%=line_chart current_user.position_for_graph %>
+<div class="p-graph">
+  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+  <%= line_chart current_user.position_for_graph %>
+</div>
 
 <div class="p-bas">
 <center>
