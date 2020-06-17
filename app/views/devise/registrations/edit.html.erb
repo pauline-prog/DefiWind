@@ -1,7 +1,10 @@
 <%= render 'components/navbar-top-back' %>
 
 <div class="bg-sign">
-  <h5>Changer de mot de passe</h5>
+  <br><br><br><br>
+  <h6>Modifier le mot de passe</h6>
+  <br>
+
   <div class="row card_sign m-center">
     <%= simple_form_for(resource, as: resource_name, url: user_registration_path(), html: { method: :patch }) do |f| %>
       <%= f.error_notification %>
@@ -27,17 +30,19 @@
                     input_html: { autocomplete: "new-password", class: 'inputFor' } %>
         <%= f.input :password_confirmation,
                     placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;"),
-                    label: "Confirmation mot de passe",
+                    label: "Confirmation du mot de passe",
                     required: false,
                     input_html: { autocomplete: "new-password", class: 'inputFor' } %>
 
       </div>
 
+      <br>
       <div class="form-actions">
-        <%= f.button :submit, "Enregistrer" %>
+        <%= f.button :submit, "ENREGISTRER" %>
       </div>
     <% end %>
   </div>
+
   <div class="delete">
     <h6>Supprimer mon compte</h6>
     <div class="row card_delete m-center3">
