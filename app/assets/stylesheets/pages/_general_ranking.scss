@@ -5,6 +5,7 @@
   color: white;
   text-align: center;
   border-bottom-right-radius: 3rem 3rem;
+  border-bottom-left-radius: 3rem 3rem;
   border: none;
 }
 
@@ -23,12 +24,9 @@
   background-color: #292929;
 }
 
-#hint {
-  font-size: 9px;
-}
-
-#event {
-  width: 100px;
+.compare {
+  margin-left: 30%;
+  margin-bottom: 1%;
 }
 
 table {

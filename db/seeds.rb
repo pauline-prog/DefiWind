@@ -24,7 +24,7 @@
 # Event.destroy_all
 
 # puts "Creating events ..."
-  
+
 #   event = Event.new(
 #     title: "Event1",
 #     description: "Description de l'event 1",
@@ -68,15 +68,21 @@
 
 # puts "Position created"
 
-puts "Creating admin user"
+# puts "Creating admin user"
 
-  User.create!(
-    email: "admin@admin.fr",
-    first_name: "pauline",
-    last_name: "poize",
-    race_number: 108,
-    password: "password",
-    admin: true
-    )
+#   User.create!(
+#     email: "admin@admin.fr",
+#     first_name: "pauline",
+#     last_name: "poize",
+#     race_number: 108,
+#     password: "password",
+#     admin: true
+#     )
 
-puts "Admin user created"
+# puts "Admin user created"
+
+puts "Destroying positions"
+
+Position.destroy_all
+
+puts "Positions destroyed"

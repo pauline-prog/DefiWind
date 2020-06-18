@@ -26,7 +26,7 @@ class User < ApplicationRecord
   def position_for_graph
     graph_positions = {}
     self.positions.map do |position|
-      graph_positions[position.created_at] = position.place
+      graph_positions[position.event.title] = position.place
     end
     return graph_positions
   end
