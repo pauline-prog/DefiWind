@@ -7,24 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Post.destroy_all
+# Post.destroy_all
 
-puts "Creating post ..."
+# puts "Creating post ..."
 
-  post = Post.new(
-    title: Faker::Food.dish,
-    description: Faker::Food.description,
-  	)
-  file = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
-  post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
-  post.save!
+#   post = Post.new(
+#     title: Faker::Food.dish,
+#     description: Faker::Food.description,
+#   	)
+#   file = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
+#   post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
+#   post.save!
 
-puts "Post created"
+# puts "Post created"
 
 # Event.destroy_all
 
 # puts "Creating events ..."
-  
+
 #   event = Event.new(
 #     title: "Event1",
 #     description: "Description de l'event 1",
@@ -68,15 +68,21 @@ puts "Post created"
 
 # puts "Position created"
 
-puts "Creating admin user"
+# puts "Creating admin user"
 
-  User.create!(
-    email: "admin@admin.fr",
-    first_name: "pauline",
-    last_name: "poize",
-    race_number: 108,
-    password: "password",
-    admin: true
-    )
+#   User.create!(
+#     email: "admin@admin.fr",
+#     first_name: "pauline",
+#     last_name: "poize",
+#     race_number: 108,
+#     password: "password",
+#     admin: true
+#     )
 
-puts "Admin user created"
+# puts "Admin user created"
+
+puts "Destroying positions"
+
+Position.destroy_all
+
+puts "Positions destroyed"
