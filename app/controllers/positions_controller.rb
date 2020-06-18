@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
   def index
-  	@positions = Position.where(general: true)
+  	@positions = Position.where(general: true).order('place ASC')
   	if params[:user_query].present?
   	  # sql_query = "first_name ILIKE :user_query or last_name ILIKE :user_query or race_number ILIKE :user_query"
   	  # @user = User.where(sql_query, user_query: "%#{params[:user_query]}%"

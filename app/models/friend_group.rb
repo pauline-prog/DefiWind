@@ -2,7 +2,7 @@ class FriendGroup < ApplicationRecord
   belongs_to :event
   has_many :friend_groups_users
   has_one :friend_groups_users, dependent: :destroy
-  has_many :users, through: :friend_groups_users, dependent: :destroy
+  has_many :users, through: :friend_groups_users
 
   def add_user(user)
   	# if user.group_rankings.empty?

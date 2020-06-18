@@ -5,7 +5,7 @@ class Position < ApplicationRecord
   belongs_to :user
   validates :point, presence: true
   validates :time, presence: true
-  validates :place, presence: true, uniqueness: true
+  validates :place, presence: true
   validates :general, default: false
   include PgSearch::Model
   pg_search_scope :global_search,

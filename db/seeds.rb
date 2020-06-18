@@ -80,6 +80,11 @@
 #     )
 
 # puts "Admin user created"
+puts "Destroying friendgroups"
+
+FriendGroup.destroy_all
+
+puts "Friendgroups destroyed"
 
 puts "Destroying positions"
 

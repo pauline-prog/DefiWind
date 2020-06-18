@@ -45,8 +45,10 @@ class EventsController < ApplicationController
       url = "http://localhost:3000"
     elsif request.referrer.include?("lololegall")
       url = "https://defiwind-lololegall.herokuapp.com"
-    else
+    elsif request.referrer.include?("defiwind.herokuapp")
       url = "https://defiwind.herokuapp.com"
+    else
+      url = "http://www.defiwind.xyz"
     end
     if request.referrer == "#{url}/events"
       redirect_to events_path(anchor: "event-#{@event.id}")
