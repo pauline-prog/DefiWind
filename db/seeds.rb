@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Post.destroy_all
+# Post.destroy_all
 
-puts "Creating post ..."
+# puts "Creating post ..."
 
-  post = Post.new(
-    title: Faker::Food.dish,
-    description: Faker::Food.description,
-  	)
-  file = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
-  post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
-  post.save!
+#   post = Post.new(
+#     title: Faker::Food.dish,
+#     description: Faker::Food.description,
+#   	)
+#   file = URI.open("https://www.windmag.com/media/D%C3%A9fi%20Wind/2018/jour4/JMC_5747.jpg")
+#   post.photo.attach(io:file, filename:'avatar.png', content_type: 'img/png')
+#   post.save!
 
-puts "Post created"
+# puts "Post created"
 
 # Event.destroy_all
 

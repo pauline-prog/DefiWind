@@ -8,6 +8,10 @@
   border: none;
 }
 
+.titles {
+  padding-bottom: 90px;
+}
+
 .card p {
   padding-top: 95px;
   text-align: center;
@@ -19,6 +23,13 @@
   background-color: #292929;
 }
 
+#hint {
+  font-size: 9px;
+}
+
+#event {
+  width: 100px;
+}
 
 table {
   width: 100%;

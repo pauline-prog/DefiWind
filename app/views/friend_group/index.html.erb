@@ -3,22 +3,22 @@
 <div class="card">
   <p>CLASSEMENT ENTRE AMIS 💪</p>
 </div>
-
-<div class="classement_friend d-flex justify-content-center">
+<div class="container">
+<div class="classement d-flex justify-content-center">
   <% @events = Event.where(course: true) %>
   <%= form_tag friend_group_index_path, method: :get, style: 'height: auto' do %>
     <%= label_tag "Crées un classement avec tes amis !" %><br>
-    <p>* 7 personnes maximum</p>
+    <p id="hint">* 7 personnes maximum</p>
     <%= select_tag "event", options_from_collection_for_select(@events, "id", "title"), prompt: "Course", class: 'input-classement' %>
     <%= text_field_tag :first_query, params[:first_query], placeholder: "Nom, prénom ou n° de dossard", id: 'first', class: 'input-classement' %><br>
     <%= text_field_tag :second_query, params[:second_query], placeholder: "Nom, prénom ou n° de dossard", id: 'second', class: 'input-classement' %><br>
-    <%= submit_tag "Créer", class: "btn-classementfr" %>
+    <%= submit_tag "Créer", class: "btn-classement" %>
 
   <% end %>
 </div>
-
+</div>
 <% if @friend_groups != nil %>
-<div class="container">
+<div class="titles">
   <div class="responsive-table-line" style="margin:0px auto;">
   <table class="table-striped justify-content-center">
     <thead class="result thead-light">
