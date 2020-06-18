@@ -5,6 +5,7 @@
   color: white;
   text-align: center;
   border-bottom-right-radius: 3rem 3rem;
+  border-bottom-left-radius: 3rem 3rem;
   border: none;
 }
 
@@ -19,6 +20,10 @@
   background-color: #292929;
 }
 
+.compare {
+  margin-left: 30%;
+  margin-bottom: 1%;
+}
 
 table {
   width: 100%;

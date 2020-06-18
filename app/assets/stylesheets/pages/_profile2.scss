@@ -69,11 +69,16 @@
 // graph
 
 .p-graph {
-  margin: 0 30px 0 30px;
+  margin: 5px 30px 0 30px;
 }
 
+#chart-1 canvas {
+  height: 200px!important;
+}
 
-
+#chart-1 {
+  height: 205px!important;
+}
 
 // bas
 
