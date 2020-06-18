@@ -6,7 +6,7 @@
 
 <div class="classement d-flex justify-content-center">
   <%= form_tag positions_path, method: :get do %>
-    <%= text_field_tag :user_query, params[:user_query], placeholder: "Votre nom ou prénom", class: 'input-search' %>
+    <%= text_field_tag :user_query, params[:user_query], placeholder: "Nom et prénom ou n° de dossard", class: 'input-search' %>
     <%= submit_tag "Rechercher", class: "btn-classement" %>
   <% end %>
 </div>

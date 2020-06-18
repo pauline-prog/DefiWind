@@ -1,4 +1,6 @@
 class Position < ApplicationRecord
+  before_validation :string_to_boolean
+
   belongs_to :event
   belongs_to :user
   validates :point, presence: true
@@ -14,4 +16,10 @@ class Position < ApplicationRecord
       tsearch: { prefix: true }
     }
   # multisearchable :against => [:user, :author]
+
+
+  def string_to_boolean
+    self.general = true if self.general == "true"
+    self.general = false if self.general == "false"
+  end
 end

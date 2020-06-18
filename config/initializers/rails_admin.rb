@@ -27,6 +27,7 @@ RailsAdmin.config do |config|
       field :point
       field :place
       field :time
+      field :general
     end
   end
   config.model 'Event' do
