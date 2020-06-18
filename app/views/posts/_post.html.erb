@@ -7,7 +7,7 @@
       <% if post.photo.attached? %>
         <%= cl_image_tag post.photo.key, width:'375px', height: 'auto' %>
       <% elsif post.video.attached? %>
-        <%= cl_video_tag post.video.key, controls: '', width:'375px', height: 'auto' %>
+        <%= cl_video_tag post.video.key, controls: '', width:'375px', height: 'auto', autoplay: 'false', muted:'true' %>
       <% end %>
     </div>
   </div>
