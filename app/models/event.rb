@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :date, presence: true
-  validates :course, presence: true, default: false
+  validates :course, default: false
   has_many :favorites, dependent: :destroy
   has_many :positions, dependent: :destroy
   has_one_attached :photo
