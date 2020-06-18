@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@posts = Post.all.order('created_at ASC')
+  	@posts = Post.all.order('created_at DESC')
     @likes = Like.all
   end
 

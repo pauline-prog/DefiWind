@@ -7,11 +7,12 @@
 <div class="classement_friend d-flex justify-content-center">
   <% @events = Event.where(course: true) %>
   <%= form_tag friend_group_index_path, method: :get, style: 'height: auto' do %>
-    <%= label_tag "Créer un classement entre amis" %><br>
-    <%= select_tag "course", options_from_collection_for_select(@events, "id", "title"), prompt: "Course", class: 'input-classement' %>
+    <%= label_tag "Crées un classement avec tes amis !" %><br>
+    <p>* 7 personnes maximum</p>
+    <%= select_tag "event", options_from_collection_for_select(@events, "id", "title"), prompt: "Course", class: 'input-classement' %>
     <%= text_field_tag :first_query, params[:first_query], placeholder: "Nom, prénom ou n° de dossard", id: 'first', class: 'input-classement' %><br>
     <%= text_field_tag :second_query, params[:second_query], placeholder: "Nom, prénom ou n° de dossard", id: 'second', class: 'input-classement' %><br>
-    <%= submit_tag "Rechercher", class: "btn-classementfr" %>
+    <%= submit_tag "Créer", class: "btn-classementfr" %>
 
   <% end %>
 </div>
