@@ -3,32 +3,33 @@
 <% events.each do |event| %>
 
   <%= link_to event_path(event.id) do %>
-    <% if event.photo.attached? %>
-      <div class="card-category" style="background-image: url(<%= cl_image_path(event.photo.key) %>)">
-    <% else %>
-      <div class="card-category" style="background-image: url(https://static.wixstatic.com/media/dc92a4_c59f606c98a94f9cb4a1df7d4190ab9d~mv2.jpg)">
-    <% end %>
-      <div class="d-flex flex-column">
-        <span class="card-date"><%= event.date.hour %>H<%= event.date.min %> - <%= event.date.day %>/<%= event.date.month %>/<%= event.date.year %></span>
-        <span class="card-title"><%= event.title.upcase %></span>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="favorite-heart">
-    <% if current_user %>
-      <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
-        <% if current_user.events.include?(event) %>
-          <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
-        <% else %>
-          <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
-        <% end %>
+    <div id="event-<%= event.id %>">
+      <% if event.photo.attached? %>
+        <div class="card-category" style="background-image: url(<%= cl_image_path(event.photo.key) %>)">
+      <% else %>
+        <div class="card-category" style="background-image: url(https://static.wixstatic.com/media/dc92a4_c59f606c98a94f9cb4a1df7d4190ab9d~mv2.jpg)">
       <% end %>
-    <% else %>
-      <span class="br-large"></span>
+        <div class="d-flex flex-column">
+          <span class="card-date"><%= event.date.hour %>H<%= event.date.min %> - <%= event.date.day %>/<%= event.date.month %>/<%= event.date.year %></span>
+          <span class="card-title"><%= event.title.upcase %></span>
+        </div>
+      </div>
     <% end %>
-  </div>
 
+    <div class="favorite-heart">
+      <% if current_user %>
+        <%= link_to new_favorite_path(event.id), method: :post, remote: true do %>
+          <% if current_user.events.include?(event) %>
+            <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1591953092/likered_tccexp.png" width="35"></i>
+          <% else %>
+            <i><img src="https://res.cloudinary.com/dpwr92z8p/image/upload/v1592235242/heartwhite_d9nqki.png" width="35"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <span class="br-large"></span>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 
 <br><br><br>
