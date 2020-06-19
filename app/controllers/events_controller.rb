@@ -52,21 +52,21 @@ class EventsController < ApplicationController
     end
     if request.referrer == "#{url}/events"
       redirect_to events_path(anchor: "event-#{@event.id}")
-    elsif request.referrer  == "#{url}/events/event-%"
+    elsif request.referrer  == "#{url}/events#event-%"
       redirect_to events_path(anchor: "event-#{@event.id}")
     elsif request.referrer == "#{url}/day_events"
       redirect_to day_events_path(anchor: "event-#{@event.id}")
-    elsif request.referrer == "#{url}/day_events/event-%"
+    elsif request.referrer == "#{url}/day_events#event-%"
       redirect_to day_events_path(anchor: "event-#{@event.id}")
     elsif request.referrer == "#{url}/night_events"
       redirect_to night_events_path(anchor: "event-#{@event.id}")
-    elsif request.referrer == "#{url}/night_events/event-%"
+    elsif request.referrer == "#{url}/night_events#event-%"
       redirect_to night_events_path(anchor: "event-#{@event.id}")
     elsif request.referrer == "#{url}/favorited_events"
       redirect_to favorited_events_path(anchor: "event-#{@event.id}")
-    elsif request.referrer == "#{url}/favorited_events/event-%"
+    elsif request.referrer == "#{url}/favorited_events#event-%"
       redirect_to favorited_events_path(anchor: "event-#{@event.id}")
-    elsif request.referrer == "#{url}/event/%"
+    elsif request.referrer == "#{url}/events/%"
       redirect_to event_path(@event)
     end
   end
