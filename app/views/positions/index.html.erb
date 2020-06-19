@@ -29,13 +29,15 @@
     </thead>
     <tbody>
       <% @positions.each do |position| %>
-        <tr>
-          <td><%= position.place %></td>
-          <td class="text-uppercase"><%= position.user.last_name %></td>
-          <td class="text-capitalize"><%= position.user.first_name %></td>
-          <td><%= position.time.hour %>h<%= position.time.min %>min</td>
-          <td><%= position.point %></td>
-        </tr>
+        <div id="position-<%= position.id %>">
+          <tr>
+            <td><%= position.place %></td>
+            <td class="text-uppercase"><%= position.user.last_name %></td>
+            <td class="text-capitalize"><%= position.user.first_name %></td>
+            <td><%= position.time.hour %>h<%= position.time.min %>min</td>
+            <td><%= position.point %></td>
+          </tr>
+        </div>
       <% end %>
     </tbody>
   </table>
