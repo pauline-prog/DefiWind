@@ -9,7 +9,7 @@ gem 'rails_admin', '~> 2.0'
 
 gem 'pg_search'
 
-gem 'chartkick', '~> 3.0', '>= 3.0.1'
+gem 'chartkick', '~> 3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
@@ -33,7 +33,7 @@ gem 'cloudinary', '~> 1.12.0'
 
 gem 'faker'
 
-gem 'chartkick', '~> 3.0', '>= 3.0.1'
+gem 'chartkick', '~> 3.4'
 
 gem 'groupdate'
 
